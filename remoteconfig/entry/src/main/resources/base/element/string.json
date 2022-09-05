@@ -2,27 +2,11 @@
   "string": [
     {
       "name": "entry_MainAbility",
-      "value": "RemoteConfig"
+      "value": "entry_MainAbility"
     },
     {
       "name": "mainability_description",
-      "value": "RemoteConfig Demo"
-    },
-    {
-      "name": "fetch_apply",
-      "value": "fetch data and apply"
-    },
-    {
-      "name": "fetch_save",
-      "value": "fetch data and apply next startup"
-    },
-    {
-      "name": "clear",
-      "value": "clear data"
-    },
-    {
-      "name": "tip",
-      "value": "Clear the cache data before switching the presentation mode."
+      "value": "JS_Empty Ability"
     }
   ]
 }

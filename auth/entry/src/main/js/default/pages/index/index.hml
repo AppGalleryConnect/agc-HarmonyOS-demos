@@ -1,0 +1,56 @@
+<div class="container">
+    <div style="flex-direction : column;">
+        <text class="margin">login mode</text>
+        <div class="selectcontainer">
+        <select @change='changeMode'>
+            <option value="phone" selected="true">
+                phone
+            </option>
+            <option value="email">
+                email
+            </option>
+        </select>
+        </div>
+    </div>
+
+    <input id="account" class="input" type="text" value="" maxlength="100"
+           onchange="changeAccount" placeholder="account">
+        {{ account }}</input>
+    <input id="password" class="input" type="text" value="" maxlength="100"
+           onchange="changePassword" placeholder="password">
+        {{ password }}
+    </input>
+    <input id="verifyCode" class="input" type="text" value="" maxlength="100"
+           onchange="changeVerifyCode" placeholder="verifyCode">
+        {{ verifyCode }}
+    </input>
+    <div class="div-button">
+        <button class="button" type="capsule" value="login" onclick="login"></button>
+        <button class="button" type="capsule" value="get verifyCode" onclick="getVerifyCode"></button>
+    </div>
+    <div class="div-button">
+        <button class="button" type="capsule" value="CreateUser" onclick="createUser"></button>
+        <button class="button" type="capsule" value="Anonymously" onclick="loginAnonymously"></button>
+    </div>
+    <div class="div-button">
+        <button class="button" type="capsule" value="reauthenticate" onclick="reauthenticate"></button>
+        <button class="button" type="capsule" value="updateAccount" onclick="updateAccount"></button>
+    </div>
+    <div class="div-button">
+        <button class="button" type="capsule" value="verifyCodeForPWD" onclick="getVerifyCodeForPWD"></button>
+        <button class="button" type="capsule" value="updatePwd" onclick="updatePwd"></button>
+    </div>
+    <div class="div-button">
+        <button class="button" type="capsule" value="loginOut" onclick="logOut"></button>
+        <button class="button" type="capsule" value="deleteUser" onclick="deleteUser"></button>
+    </div>
+    <div class="div-button">
+        <button class="button" type="capsule" value="updateProfile" onclick="updateProfile"></button>
+    </div>
+    <div class="container">
+        <text>user info</text>
+        <textarea id="textarea" class="textarea" extend="true" maxlength="2000" disabled="true">
+            {{ userInfo }}
+        </textarea>
+    </div>
+</div>

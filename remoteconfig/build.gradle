@@ -1,18 +1,22 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 apply plugin: 'com.huawei.ohos.app'
 
-ext {
-    version = "1.1.0.300"
+//For instructions on signature configuration, see https://developer.harmonyos.com/cn/docs/documentation/doc-guides/ide_debug_device-0000001053822404#section1112183053510
+ohos {
+    signingConfigs {
+        debug {
+            storeFile file('D:\\hmos.p12')
+            storePassword '0000001A15CA67E1B3F24353FFA68B9DB567EDFA06DDA394947B40EE80CF597D30A20812A87D3C504A5F'
+            keyAlias = 'hmos'
+            keyPassword '0000001AFB9CC64691BEC8EFF35C3F356D4B819B0741FB320F5EDDB23C5CC895815DF47BE8BAA3688D42'
+            signAlg = 'SHA256withECDSA'
+            profile file('D:\\hmosDebug (1).p7b')
+            certpath file('D:\\hmos (1).cer')
+        }
+    }
+    compileSdkVersion 6
 }
 
-//For instructions on signature configuration, see https://developer.harmonyos.com/cn/docs/documentation/doc-guides/ide_debug_device-0000001053822404#ZH-CN_TOPIC_0000001154985555__section1112183053510
-ohos {
-    compileSdkVersion 5
-    defaultConfig {
-        compatibleSdkVersion 4
-    }
-}
-	
 buildscript {
     repositories {
         maven {
@@ -21,13 +25,10 @@ buildscript {
         maven {
             url 'https://developer.huawei.com/repo/'
         }
-
-        jcenter()
     }
     dependencies {
-        classpath 'com.huawei.ohos:hap:2.4.4.2'
-        classpath 'com.huawei.ohos:decctest:1.2.4.0'
-        classpath 'com.huawei.agconnect:agcp-harmony:1.1.0.300'
+        classpath 'com.huawei.ohos:hap:2.4.5.5'
+        classpath 'com.huawei.ohos:decctest:1.2.5.1'
     }
 }
 
@@ -39,7 +40,5 @@ allprojects {
         maven {
             url 'https://developer.huawei.com/repo/'
         }
-
-        jcenter()
     }
 }

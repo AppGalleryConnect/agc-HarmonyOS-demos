@@ -1,0 +1,61 @@
+.container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.selectcontainer {
+    margin-left: 20px;
+}
+
+.input {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+.button {
+    min-width:180px;
+}
+.div-button {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.margin {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+@media screen and (device-type: tablet) and (orientation: landscape) {
+    .title {
+        font-size: 100px;
+    }
+}
+
+@media screen and (device-type: wearable) {
+    .title {
+        font-size: 28px;
+        color: #FFFFFF;
+    }
+}
+
+@media screen and (device-type: tv) {
+    .container {
+        background-image: url("../../common/images/Wallpaper.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .title {
+        font-size: 100px;
+        color: #FFFFFF;
+    }
+}
+
+@media screen and (device-type: phone) and (orientation: landscape) {
+    .title {
+        font-size: 60px;
+    }
+}

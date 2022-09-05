@@ -1,0 +1,13 @@
+<div class="container">
+    <input id="httpTriggerInput" class="input" type="text" value="" maxlength="100"
+           onchange="httpTriggerChange" placeholder="input your httpTrigger">
+        {{ httpTrigger }}</input>
+    <input id="bodyInput" class="input" type="text" value="" maxlength="100"
+           onchange="reqBodyChange" placeholder="input your reqBody">
+        {{ reqBody }}
+    </input>
+    <button class="button" type="capsule" value="run function" onclick="runfunction"></button>
+    <textarea id="textarea" class="textarea" extend="true" maxlength="2000" disabled="true">
+        {{ functionRes }}
+    </textarea>
+</div>

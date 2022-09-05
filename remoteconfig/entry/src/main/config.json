@@ -1,7 +1,7 @@
 {
   "app": {
-    "bundleName": "com.huawei.agc.quickstart",
-    "vendor": "huawei",
+    "bundleName": "com.test.hmos",
+    "vendor": "test",
     "version": {
       "code": 1000000,
       "name": "1.0.0"
@@ -9,11 +9,14 @@
   },
   "deviceConfig": {},
   "module": {
-    "package": "com.huawei.quickstart.remoteconfig",
+    "package": "com.test.hmos",
     "name": ".MyApplication",
-    "mainAbility": "com.huawei.quickstart.remoteconfig.MainAbility",
+    "mainAbility": "com.test.hmos.MainAbility",
     "deviceType": [
-      "phone"
+      "phone",
+      "tablet",
+      "tv",
+      "wearable"
     ],
     "distro": {
       "deliveryWithInstall": true,
@@ -33,21 +36,29 @@
             ]
           }
         ],
-        "orientation": "unspecified",
-        "name": "com.huawei.quickstart.remoteconfig.MainAbility",
+        "name": "com.test.hmos.MainAbility",
         "icon": "$media:icon",
         "description": "$string:mainability_description",
         "label": "$string:entry_MainAbility",
         "type": "page",
         "launchType": "standard"
-      },
+      }
+    ],
+    "js": [
       {
-        "permissions": [
-          "com.huawei.agconnect.core.DataAbilityShellProvider.PROVIDER"
+        "pages": [
+          "pages/index/index"
         ],
-        "name": "com.huawei.agconnect.core.provider.AGConnectInitializeAbility",
-        "type": "data",
-        "uri": "dataability://com.huawei.agc.quickstart.AGConnectInitializeAbility"
+        "name": "default",
+        "window": {
+          "designWidth": 720,
+          "autoDesignWidth": true
+        }
+      }
+    ],
+    "reqPermissions": [
+      {
+        "name": "ohos.permission.INTERNET"
       }
     ]
   }

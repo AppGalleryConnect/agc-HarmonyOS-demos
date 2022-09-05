@@ -1,0 +1,18 @@
+<div class="container">
+    <input id="fetchReqTimeoutMillis" class="input" type="text" value="" maxlength="100"
+           onchange="changeFetchReqTimeoutMillis" placeholder="fetchReqTimeoutMillis">
+        {{ fetchReqTimeoutMillis }}</input>
+    <input id="minFetchIntervalMillis" class="input" type="text" value="" maxlength="100"
+           onchange="changeMinFetchIntervalMillis" placeholder="minFetchIntervalMillis">
+        {{ minFetchIntervalMillis }}
+    </input>
+    <input id="defaultConfig" class="input" type="text" value="" maxlength="100"
+           onchange="changeDefaultConfig" placeholder="defaultConfig">
+        {{ defaultConfig }}
+    </input>
+    <button class="button" type="capsule" value="fetchAndApply" onclick="fetchAndApply"></button>
+    <button class="button" type="capsule" value="showConfig" onclick="showConfig"></button>
+    <textarea id="textarea" class="textarea" extend="true" maxlength="2000">
+        {{ configInfo }}
+    </textarea>
+</div>
