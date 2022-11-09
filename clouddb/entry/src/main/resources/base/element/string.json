@@ -1,0 +1,16 @@
+{
+  "string": [
+    {
+      "name": "entry_desc",
+      "value": "OpenHarmony demo"
+    },
+    {
+      "name": "MainAbility_desc",
+      "value": "OpenHarmony demo for Cloud DB"
+    },
+    {
+      "name": "MainAbility_label",
+      "value": "云数据库Demo"
+    }
+  ]
+}
