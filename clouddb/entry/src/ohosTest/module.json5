@@ -1,17 +1,17 @@
 {
   "module": {
-    "name": "entry",
-    "type": "entry",
-    "srcEntrance": "./ets/Application/MyAbilityStage.ts",
-    "description": "$string:entry_desc",
-    "mainElement": "MainAbility",
+    "name": "entry_test",
+    "type": "feature",
+    "srcEntrance": "./ets/Application/TestAbilityStage.ts",
+    "description": "$string:entry_test_desc",
+    "mainElement": "TestAbility",
     "deviceTypes": [
       "default",
       "tablet"
     ],
     "deliveryWithInstall": true,
     "installationFree": false,
-    "pages": "$profile:main_pages",
+    "pages": "$profile:test_pages",
     "requestPermissions": [
       {
         "name": "ohos.permission.INTERNET"
@@ -19,21 +19,21 @@
     ],
     "abilities": [
       {
-        "name": "MainAbility",
-        "srcEntrance": "./ets/MainAbility/MainAbility.ts",
-        "description": "$string:MainAbility_desc",
+        "name": "TestAbility",
+        "srcEntrance": "./ets/TestAbility/TestAbility.ets",
+        "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
-        "label": "$string:MainAbility_label",
+        "label": "$string:TestAbility_label",
+        "visible": true,
         "startWindowIcon": "$media:icon",
         "startWindowBackground": "$color:white",
-        "visible": true,
         "skills": [
           {
-            "entities": [
-              "entity.system.home"
-            ],
             "actions": [
               "action.system.home"
+            ],
+            "entities": [
+              "entity.system.home"
             ]
           }
         ]

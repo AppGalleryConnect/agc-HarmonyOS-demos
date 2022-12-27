@@ -14,7 +14,7 @@ This project is a quick start sample developed using Cloud DB SDK.
 
 - Click **Cloud DB** on the navigation bar and enable database service. Then, perform the following operations:
 
-  （1）Create a schema by importing a template file stored in **app-schema.json** in the root directory of the project. Alternatively, create a schema named **BookInfo** and ensure that all fields must be the same as those in **BookInfo.js** in the project.
+  （1）Create a schema by importing a template file stored in **app-schema.json** in the root directory of the project. Alternatively, create a object type named **BookInfo** and ensure that all fields must be the same as those in **BookInfo.js** in the project.
 
   ```
   entry/src/main/ets/Service/app-schema.json
@@ -24,7 +24,7 @@ This project is a quick start sample developed using Cloud DB SDK.
   （2） Create a Cloud DB zone. On the **Cloud DB Zone** tab page, click **Add** to create a Cloud DB zone named **QuickStartDemo**.
 
 
-- On the Project Setting page, obtain the app configuration information. Save it to the context object in the **agconnect-services.json** file. Then replace the file `AppScope/resources/rawfile/agconnect-services.json`.
+- On the Project Setting page, obtain the app configuration information. Save it to the context object in the **agconnect-services.json** file. Then replace the file `entry/src/main/resources/rawfile/`.
 
 - Integrate the Cloud DB SDK.
 
