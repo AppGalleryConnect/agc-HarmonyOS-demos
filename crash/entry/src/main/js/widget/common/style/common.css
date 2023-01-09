@@ -1,0 +1,60 @@
+.card_root_layout {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    background-color: #FFFFFF;
+}
+
+.button_containers {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.item_first_container {
+    flex-weight: 0.4;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.item_second_container {
+    flex-weight: 0.4;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.button_left {
+    flex-weight: 0.5;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.button_right {
+    flex-weight: 0.5;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.button_info {
+    radius: 22px;
+    icon-width: 24px;
+    icon-height: 24px;
+    background-color: #007DFB;
+}
+
+.text_info {
+    margin-top: 3px;
+    font-size: 12px;
+    text-align: center;
+    max-lines: 1;
+    text-overflow: ellipsis;
+    color: #000000;
+}

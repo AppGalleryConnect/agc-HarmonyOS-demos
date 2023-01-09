@@ -1,26 +1,31 @@
 apply plugin: 'com.huawei.ohos.hap'
-apply plugin: 'com.huawei.ohos.decctest'
 apply plugin: 'com.huawei.agconnect'
+//For instructions on signature configuration, see https://developer.harmonyos.com/cn/docs/documentation/doc-guides/ide_debug_device-0000001053822404#section1112183053510
 ohos {
-    compileSdkVersion 5
+    compileSdkVersion 7
     defaultConfig {
-        compatibleSdkVersion 4
+        compatibleSdkVersion 7
     }
     buildTypes {
         release {
             proguardOpt {
-                proguardEnabled false
+                proguardEnabled true
                 rulesFiles 'proguard-rules.pro'
             }
         }
     }
-    
+    externalNativeBuild {
+        path "src/main/cpp/CMakeLists.txt"
+        arguments "-v -DOHOS_STL=c++_shared"
+        abiFilters "arm64-v8a", "armeabi-v7a"
+        cFlags "-Os -Oz -Wall -s -Wl -z relro -z now -fPIC -pie -ffunction-sections -fdata-sections -D_FORTIFY_SOURCE=2 -O2"
+        cppFlags "-Os -Oz -Wall -s -Wl -z relro -z now -fPIC -pie -ffunction-sections -fdata-sections -D_FORTIFY_SOURCE=2 -O2"
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar', '*.har'])
-    implementation 'com.huawei.agconnect:agconnect-crash-harmony:1.1.0.300'
-}
-decc {
-    supportType = ['html','xml']
+
+    implementation 'com.huawei.agconnect:apms-crash-harmony:1.1.0.300'
+    implementation 'com.huawei.agconnect:apms-native-crash-harmony:1.1.0.300'
 }

@@ -1,17 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
 <DirectionalLayout
     xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
     ohos:width="match_parent"
-    ohos:height="match_parent">
+    ohos:background_element="#f3f3f3"
+    ohos:orientation="vertical">
 
-    <Button
-        ohos:id="$+id:Make_Crash"
+    <DirectionalLayout
         ohos:width="match_parent"
-        ohos:height="40vp"
-        ohos:top_margin="300vp"
-        ohos:background_element="$graphic:background_ability_main"
-        ohos:layout_alignment="horizontal_center"
-        ohos:text_size="30vp"
-        ohos:text="make crash"/>
+        ohos:height="match_content"
+        ohos:orientation="horizontal"
+        ohos:total_weight="2">
 
+        <Button
+            ohos:id="$+id:btn_init"
+            ohos:height="match_content"
+            ohos:width="0vp"
+            ohos:background_element="$graphic:button_element"
+            ohos:margin="8vp"
+            ohos:padding="8vp"
+            ohos:text="init"
+            ohos:text_color="white"
+            ohos:text_size="16fp"
+            ohos:weight="1"/>
+
+        <Button
+            ohos:id="$+id:btn_java_crash_0"
+            ohos:height="match_content"
+            ohos:width="0vp"
+            ohos:background_element="$graphic:button_element"
+            ohos:margin="8vp"
+            ohos:padding="8vp"
+            ohos:text="java normal崩溃"
+            ohos:text_color="white"
+            ohos:text_size="16fp"
+            ohos:weight="1"/>
+    </DirectionalLayout>
+
+    <DirectionalLayout
+        ohos:width="match_parent"
+        ohos:height="match_content"
+        ohos:orientation="horizontal"
+        ohos:total_weight="2">
+
+        <Button
+            ohos:id="$+id:btn_java_crash"
+            ohos:height="match_content"
+            ohos:width="0vp"
+            ohos:background_element="$graphic:button_element"
+            ohos:margin="8vp"
+            ohos:padding="8vp"
+            ohos:text="java OOM崩溃"
+            ohos:text_color="white"
+            ohos:text_size="16fp"
+            ohos:weight="1"/>
+
+        <Button
+            ohos:id="$+id:btn_java_exception"
+            ohos:height="match_content"
+            ohos:width="0vp"
+            ohos:background_element="$graphic:button_element"
+            ohos:margin="8vp"
+            ohos:padding="8vp"
+            ohos:text="创建java异常"
+            ohos:text_color="white"
+            ohos:text_size="16fp"
+            ohos:weight="1"/>
+    </DirectionalLayout>
+
+    <DirectionalLayout
+        ohos:width="match_parent"
+        ohos:height="match_content"
+        ohos:orientation="horizontal"
+        ohos:total_weight="2">
+
+        <Button
+            ohos:id="$+id:btn_native_crash"
+            ohos:height="match_content"
+            ohos:width="0vp"
+            ohos:background_element="$graphic:button_element"
+            ohos:margin="8vp"
+            ohos:padding="8vp"
+            ohos:text="创建native崩溃"
+            ohos:text_color="white"
+            ohos:text_size="16fp"
+            ohos:weight="1"/>
+
+        <Button
+            ohos:id="$+id:btn_js_crash"
+            ohos:height="match_content"
+            ohos:width="0vp"
+            ohos:background_element="$graphic:button_element"
+            ohos:margin="8vp"
+            ohos:padding="8vp"
+            ohos:text="创建js崩溃"
+            ohos:text_color="white"
+            ohos:text_size="16fp"
+            ohos:weight="1"/>
+    </DirectionalLayout>
 </DirectionalLayout>

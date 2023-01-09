@@ -1,8 +1,52 @@
 {
   "string": [
     {
-      "name": "entry_MainAbility",
-      "value": "crash"
+      "name": "jsapplication_JsTest",
+      "value": "LJP_Crash"
+    },
+    {
+      "name": "jstest_description",
+      "value": "JS_Empty Ability"
+    },
+    {
+      "name": "serviceability_description",
+      "value": "hap sample empty service"
+    },
+    {
+      "name": "javamainability_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "javamainability_HelloWorld",
+      "value": "Hello World"
+    },
+    {
+      "name": "jsapplication_JavaMainAbility",
+      "value": "jsapplication_JavaMainAbility"
+    },
+    {
+      "name": "jsmainability_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "jsmainability_HelloWorld",
+      "value": "Hello World"
+    },
+    {
+      "name": "jsapplication_JsMainAbility",
+      "value": "jsapplication_JsMainAbility"
+    },
+    {
+      "name": "exceptionability_description",
+      "value": "hap sample empty service"
+    },
+    {
+      "name": "exceptionability_HelloWorld",
+      "value": "Hello World"
+    },
+    {
+      "name": "jsapplication_ExceptionAbility",
+      "value": "jsapplication_ExceptionAbility"
     },
     {
       "name": "mainability_description",
@@ -11,6 +55,18 @@
     {
       "name": "mainability_HelloWorld",
       "value": "Hello World"
+    },
+    {
+      "name": "entry_MainAbility",
+      "value": "HarmonyCrash"
+    },
+    {
+      "name": "jscrashability_description",
+      "value": "JS_Empty Ability"
+    },
+    {
+      "name": "entry_JsCrashAbility",
+      "value": "entry_JsCrashAbility"
     }
   ]
 }

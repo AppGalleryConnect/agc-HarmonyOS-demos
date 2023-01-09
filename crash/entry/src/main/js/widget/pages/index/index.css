@@ -1,0 +1,177 @@
+@import "../../common/style/common.css";
+
+@media (device-type: phone) and (dark-mode: false) {
+    .title_containers {
+        display: none;
+    }
+
+    .title_description {
+        display: none;
+    }
+}
+
+@media (device-type: phone) and (dark-mode: true) {
+    .card_root_layout {
+        background-color: #202224;
+    }
+
+    .title_containers {
+        display: none;
+    }
+
+    .title_description {
+        display: none;
+    }
+
+    .button_info {
+        background-color: #006CDE;
+    }
+
+    .text_info {
+        color: #FFFFFF;
+    }
+}
+
+@media (device-type: tablet) and (dark-mode: false) {
+    .title_containers {
+        display: none;
+    }
+
+    .title_description {
+        display: none;
+    }
+}
+
+@media (device-type: tablet) and (dark-mode: true) {
+    .card_root_layout {
+        background-color: #202224;
+    }
+
+    .title_containers {
+        display: none;
+    }
+
+    .title_description {
+        display: none;
+    }
+
+    .button_info {
+        background-color: #006CDE;
+    }
+
+    .text_info {
+        color: #FFFFFF;
+    }
+}
+
+@media (device-type: wearable) {
+    .card_root_layout {
+        background-color: black;
+    }
+
+    .title_containers {
+        flex-weight: 0.2;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .title_description {
+        margin-top: 10px;
+        margin-right: 56px;
+        margin-left: 56px;
+        margin-bottom: 15px;
+        font-size: 19px;
+        font-weight: bold;
+        text-align: center;
+        max-lines: 1;
+        text-overflow: ellipsis;
+        color: #FFFFFF;
+    }
+
+    .button_left {
+        justify-content: flex-start;
+    }
+
+    .button_right {
+        justify-content: flex-start;
+    }
+
+    .button_info {
+        radius: 28px;
+    }
+
+    .text_info {
+        color: #FFFFFF;
+    }
+}
+
+@media (device-type: car) and (dark-mode: false) {
+    .card_root_layout {
+        background-color: #202224;
+    }
+
+    .title_containers {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .title_description {
+        font-size: 12px;
+        font-family: @id_text_font_family_medium;
+        font-weight: bold;
+        text-align: center;
+        max-lines: 1;
+        text-overflow: ellipsis;
+        color: #FFFFFF;
+    }
+
+    .button_info {
+        radius: 12px;
+        background-color: #007DFB;
+    }
+
+    .item_second_container {
+        display: none;
+    }
+
+    .text_info {
+        display: none;
+    }
+}
+
+@media (device-type: car) and (dark-mode: true) {
+    .card_root_layout {
+        background-color: #303030;
+    }
+
+    .title_containers {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .title_description {
+        font-size: 12px;
+        font-family: @id_text_font_family_medium;
+        font-weight: bold;
+        text-align: center;
+        max-lines: 1;
+        text-overflow: ellipsis;
+        color: #FFFFFF;
+    }
+
+    .button_info {
+        radius: 14px;
+        background-color: #007DFB;
+    }
+
+    .item_second_container {
+        display: none;
+    }
+
+    .text_info {
+        display: none;
+    }
+}

@@ -1,0 +1,4 @@
+<div class="container">
+    <button class="text" type="text" @click="onCreateJsFatal"> 创建js崩溃1</button>
+    <button class="text" type="text" @click="onCreateJsFatal1"> 创建js崩溃2</button>
+</div>

@@ -1,17 +1,16 @@
 {
   "app": {
-    "bundleName": "<your bundleName>",
+    "bundleName": "com.huawei.apms.hos.crash",
     "vendor": "huawei",
     "version": {
-      "code": 1000000,
-      "name": "1.0.0"
+      "code": 1000004,
+      "name": "1.0.4"
     }
   },
   "deviceConfig": {},
   "module": {
-    "package": "com.huawei.crash",
+    "package": "com.huawei.apms.hos.crash",
     "name": ".MyApplication",
-    "mainAbility": "com.huawei.crash.MainAbility",
     "deviceType": [
       "phone"
     ],
@@ -33,21 +32,114 @@
             ]
           }
         ],
-        "orientation": "unspecified",
-        "name": "com.huawei.crash.MainAbility",
-        "icon": "$media:icon",
+        "name": "com.huawei.apms.hos.crash.MainAbility",
         "description": "$string:mainability_description",
+        "icon": "$media:icon",
         "label": "$string:entry_MainAbility",
+        "launchType": "standard",
+        "orientation": "unspecified",
+        "visible": true,
+        "type": "page",
+        "formsEnabled": true,
+        "forms": [
+          {
+            "jsComponentName": "widget",
+            "isDefault": true,
+            "scheduledUpdateTime": "10:30",
+            "defaultDimension": "2*2",
+            "name": "widget",
+            "description": "This is a service widget",
+            "colorMode": "auto",
+            "type": "JS",
+            "supportDimensions": [
+              "2*2"
+            ],
+            "updateEnabled": true,
+            "updateDuration": 1
+          }
+        ]
+      },
+      {
+        "orientation": "unspecified",
+        "visible": true,
+        "name": "com.huawei.apms.hos.crash.js.JsMainAbility",
+        "icon": "$media:icon",
+        "description": "$string:jstest_description",
+        "label": "$string:jsapplication_JsTest",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "visible": true,
+        "name": "com.huawei.apms.hos.crash.ServiceAbility",
+        "icon": "$media:icon",
+        "description": "$string:serviceability_description",
+        "type": "service"
+      },
+      {
+        "orientation": "unspecified",
+        "visible": true,
+        "name": "com.huawei.apms.hos.crash.java.JavaMainAbility",
+        "icon": "$media:icon",
+        "description": "$string:javamainability_description",
+        "label": "$string:jsapplication_JavaMainAbility",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "visible": true,
+        "name": "com.huawei.apms.hos.crash.nativecrash.NativeMainAbility",
+        "icon": "$media:icon",
+        "description": "$string:jsmainability_description",
+        "label": "$string:jsapplication_JsMainAbility",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.huawei.apms.hos.crash.java.ExceptionAbility",
+        "icon": "$media:icon",
+        "description": "$string:exceptionability_description",
+        "label": "$string:jsapplication_ExceptionAbility",
         "type": "page",
         "launchType": "standard"
       },
       {
         "permissions": [
-          "com.huawei.crash.DataAbilityShellProvider.PROVIDER"
+          "com.huawei.agconnect.core.DataAbilityShellProvider.PROVIDER"
         ],
-        "name": "<your bundleName>.provider.AGConnectInitializeAbility",
+        "name": "com.huawei.agconnect.core.provider.AGConnectInitializeAbility",
         "type": "data",
-        "uri": "dataability://<your bundleName>.AGConnectInitializeAbility"
+        "uri": "dataability://com.huawei.apms.hos.crash.AGConnectInitializeAbility"
+      },
+      {
+        "name": "com.huawei.apm.crash.APMCrashInitializeProvider",
+        "type": "data",
+        "uri": "dataability://com.huawei.apms.hos.crash.APMCrashInitializeProvider"
+      }
+    ],
+    "js": [
+      {
+        "pages": [
+          "pages/index/index"
+        ],
+        "name": "jscrash",
+        "window": {
+          "designWidth": 720,
+          "autoDesignWidth": true
+        }
+      },
+      {
+        "pages": [
+          "pages/index/index"
+        ],
+        "name": "widget",
+        "window": {
+          "designWidth": 720,
+          "autoDesignWidth": true
+        },
+        "type": "form"
       }
     ]
   }

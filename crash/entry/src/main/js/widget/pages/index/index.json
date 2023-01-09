@@ -1,0 +1,32 @@
+{
+  "actions": {
+    "routerEvent1": {
+      "action": "router",
+      "abilityName": "com.huawei.hag.jsapplication.JsTest",
+      "params": {
+        "message": "page1"
+      }
+    },
+    "routerEvent2": {
+      "action": "router",
+      "abilityName": "com.huawei.hag.jsapplication.JsTest",
+      "params": {
+        "message": "page2"
+      }
+    },
+    "routerEvent3": {
+      "action": "router",
+      "abilityName": "com.huawei.hag.jsapplication.JsTest",
+      "params": {
+        "message": "page3"
+      }
+    },
+    "routerEvent4": {
+      "action": "router",
+      "abilityName": "com.huawei.hag.jsapplication.JsTest",
+      "params": {
+        "message": "page4"
+      }
+    }
+  }
+}

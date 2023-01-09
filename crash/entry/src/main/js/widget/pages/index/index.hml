@@ -1,0 +1,27 @@
+<div class="card_root_layout">
+    <div class="title_containers">
+        <text class="title_description"> {{ $t('strings.gadget_title') }} </text>
+    </div>
+    <div class="button_containers">
+        <div class="item_first_container">
+            <div class="button_left">
+                <button class="button_info" type="circle" icon="/common/ic_default_white.svg" onclick="routerEvent1"/>
+                <text class="text_info"> {{ $t('strings.image_name') }} </text>
+            </div>
+            <div class="button_right">
+                <button class="button_info" type="circle" icon="/common/ic_default_white.svg" onclick="routerEvent2"/>
+                <text class="text_info"> {{ $t('strings.image_name') }} </text>
+            </div>
+        </div>
+        <div class="item_second_container">
+            <div class="button_left">
+                <button class="button_info" type="circle" icon="/common/ic_default_white.svg" onclick="routerEvent3"/>
+                <text class="text_info"> {{ $t('strings.image_name') }} </text>
+            </div>
+            <div class="button_right">
+                <button class="button_info" type="circle" icon="/common/ic_default_white.svg" onclick="routerEvent4"/>
+                <text class="text_info"> {{ $t('strings.image_name') }} </text>
+            </div>
+        </div>
+    </div>
+</div>
