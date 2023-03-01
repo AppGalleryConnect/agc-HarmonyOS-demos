@@ -1,7 +1,9 @@
-# agc-HarmonyOS-demos
+# agc-Harmony-demos
 [![license](https://img.shields.io/badge/license-Apache--2.0-green)](./LICENCE)
 
-This repo contains the source code for agc-HarmonyOS-demos, which are developed by the AppGallery Connect team.
+This repo contains the source code for agc-HarmonyOS-demos and agc-OpenHarmony-demos, which are developed by the AppGallery Connect team.
+
+Note: The /OpenHarmony directory is the demos's directory for OpenHarmony.
 
 These demos enable access to using specific APIs. For more information
 about demos, and how to use them, see
