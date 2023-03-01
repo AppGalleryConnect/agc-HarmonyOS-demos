@@ -24,7 +24,7 @@ These are the available plugins in this repository.
 | [remoteconfig](./remoteconfig) | [![version](https://img.shields.io/badge/Release-1.3.1.300-yellow)](./remoteconfig) | [Getting Started](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-remoteconfig-introduction-0000001055149778) <br/> [API Reference](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-References/harmony-remoteconfig-overview-0000001188328547) |
 
 ## Precautions
-The agc-HarmonyOS-demos project contains 7 independent projects. After downloading the code, you can load different nested projects to the IDE as required. And you can run each project independently.
+The agc-Harmony-demos project contains 10 independent projects. After downloading the code, you can load different nested projects to the IDE as required. And you can run each project independently.
 
 ## Question or issues
 If you have questions about how to use AppGallery Connect Demos, try the following options:  
