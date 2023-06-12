@@ -1,0 +1,10 @@
+{
+  "switch":"off" ,
+  "path": "../logs",
+  "file_level": "debug",
+  "maxSize": "20m",
+  "maxFiles": "14d",
+  "service": "AGC-Server",
+  "console_level": "debug" ,
+  "file_name_prefix":"AGC-Server"
+}

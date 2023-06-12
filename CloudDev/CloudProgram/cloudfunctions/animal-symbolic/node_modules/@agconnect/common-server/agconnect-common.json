@@ -1,0 +1,29 @@
+{
+  "sdk_name": "common",
+  "sdk_version": "1.1.0",
+  "project_cloudgw_url": [
+    {
+      "region": "CN",
+      "url": "https://connect-api.cloud.huawei.com/",
+      "backupUrl": "https://connect-api.cloud.huawei.com.cn/"
+    },
+    {
+      "region": "RU",
+      "url": "https://connect-api-drru.cloud.huawei.com/",
+      "backupUrl": "https://connect-api-drru.cloud.huawei.com.cn/"
+    },
+    {
+      "region": "SG",
+      "url": "https://connect-api-dra.cloud.huawei.com/",
+      "backupUrl": "https://connect-api-dra.cloud.huawei.com.cn/"
+    },
+    {
+      "region": "DE",
+      "url": "https://connect-api-dre.cloud.huawei.com/",
+      "backupUrl": "https://connect-api-dre.cloud.huawei.com.cn/"
+    }
+  ],
+  "team_cloudgw_url": "https://agc-api.cloud.huawei.com/",
+  "team_cloudgw_url_backup": "https://agc-api.cloud.huawei.com/",
+  "client_token_path": "api/oauth2/v1/token"
+}

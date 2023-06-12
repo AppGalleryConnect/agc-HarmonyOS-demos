@@ -1,0 +1,10 @@
+{
+  "cloudDBZoneName": "cloudDBZoneName1",
+  "objectTypeName": "animal",
+  "objects": [
+    {
+      "id": 1,
+      "animal": "Dog"
+    }
+  ]
+}

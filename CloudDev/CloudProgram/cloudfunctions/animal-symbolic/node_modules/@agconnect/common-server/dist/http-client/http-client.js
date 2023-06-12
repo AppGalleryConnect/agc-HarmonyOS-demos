@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.getHttpClient=void 0;var http_clinet_api_1=require("./http-clinet-api"),common_log_1=require("../log-config/common-log");function getHttpClient(t){return common_log_1.logger.info("step into getHttpClient method "),new http_clinet_api_1.HttpClientAPIImpl(t)}exports.getHttpClient=getHttpClient;

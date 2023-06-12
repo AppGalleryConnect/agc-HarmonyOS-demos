@@ -1,0 +1,10 @@
+{
+  "src": [
+    "pages/Index",
+    "pages/Auth",
+    "pages/CloudStorage",
+	"pages/CloudFunction",
+    "pages/AuthService",
+    "pages/Functions"
+  ]
+}
