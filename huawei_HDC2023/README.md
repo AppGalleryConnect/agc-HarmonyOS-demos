@@ -3,6 +3,7 @@
 ## 介绍
 
 2023HDC元服务是HDC大会的元服务样例。  
+![license](https://img.shields.io/badge/license-Apache--2.0-green)  
 ![元服务卡片](https://github.com/AppGalleryConnect/agc-HarmonyOS-demos/tree/master/huawei_HDC2023/image/readme1.png)
 
 此元服务实现大会签到、参加分论坛、码力互动、集成华为帐号能力关键场景，以及在元服务里查看大会期间班车信息、餐饮地址及快捷打车等。
@@ -20,7 +21,7 @@
 
 场景三：码力互动  
 在指定范围内负一屏及小艺建议推出活动内容，开发者点击卡片参与即可获得码力值。    
-![码力互动1](https://github.com/AppGalleryConnect/agc-HarmonyOS-demos/tree/master/huawei_HDC2023/image/readme3.png)
+![码力互动1](https://github.com/AppGalleryConnect/agc-HarmonyOS-demos/tree/master/huawei_HDC2023/image/readme3.png)  
 ![码力互动2](https://github.com/AppGalleryConnect/agc-HarmonyOS-demos/tree/master/huawei_HDC2023/image/readme3.png)
 
 
