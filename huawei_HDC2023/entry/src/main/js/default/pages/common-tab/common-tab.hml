@@ -1,0 +1,22 @@
+<div class="tab-barNew">
+    <div class="tab-bar-box" @click="go(1)">
+        <image src="/common/images/tabbar1{{ type == 1 ? 'p' : '' }}.png"></image>
+        <text class="{{ type == 1 ? 'tab-bar-text2' : 'tab-bar-text1' }}">首页</text>
+    </div>
+    <div class="tab-bar-box" @click="go(3)">
+        <image src="/common/images/tabbar3{{ type == 3 ? 'p' : '' }}.png"></image>
+        <text class="{{ type == 3 ? 'tab-bar-text2' : 'tab-bar-text1' }}">议程</text>
+    </div>
+    <div class="tab-bar-box" @click="go(2)">
+        <image src="/common/images/tabbar2{{ type == 2 ? 'p' : '' }}.png"></image>
+        <text class="{{ type == 2 ? 'tab-bar-text2' : 'tab-bar-text1' }}">码力互动</text>
+    </div>
+    <div class="tab-bar-box" @click="go(4)">
+        <image src="/common/images/tabbar4{{ type == 4 ? 'p' : '' }}.png"></image>
+        <text class="{{ type == 4 ? 'tab-bar-text2' : 'tab-bar-text1' }}">服务</text>
+    </div>
+    <div class="tab-bar-box" @click="go(5)">
+        <image src="/common/images/tabbar5{{ type == 5 ? 'p' : '' }}.png"></image>
+        <text class="{{ type == 5 ? 'tab-bar-text2' : 'tab-bar-text1' }}">我的</text>
+    </div>
+</div>

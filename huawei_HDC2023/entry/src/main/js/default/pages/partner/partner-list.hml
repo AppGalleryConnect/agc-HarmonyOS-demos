@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="header">
+        <div class="header-back " @click="back">
+            <image >
+            </image>
+        </div>
+        <text class="header-text">
+            合作伙伴
+        </text>
+        <div class="right-menu"><!--@click="goCardSelect"-->
+            <!--<image class="desktop-image" src="/common/images/desktop.png"></image>
+            <text class="desktop-text">添加至桌面</text>-->
+        </div>
+    </div>
+
+    <div class="box" style="flex-direction : row;">
+        <div class="item" for="{{ cooperativePartner }}">
+            <div class="icon">
+                <image src="{{ $item }}"></image>
+            </div>
+        </div>
+    </div>
+</div>
+

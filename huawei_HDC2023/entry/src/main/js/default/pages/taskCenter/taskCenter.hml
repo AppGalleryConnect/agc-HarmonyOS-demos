@@ -1,0 +1,88 @@
+<div class="container">
+    <div class="header">
+        <div class="header-back " @click="back">
+            <image src="/common/images/icon-back.png">
+            </image>
+        </div>
+        <text class="header-text">
+           任务中心
+        </text>
+        <div class="header-menu">
+            <image >
+            </image>
+        </div>
+    </div>
+    <div class="right-fix">
+        <image src="/common/images/task-right.png">
+        </image>
+    </div>
+    <div class="task">
+        <block class="task-block {{$idx!=taskList.length-1 ? 'borders':''}}" for="{{taskList}}">
+            <div class="task-left">
+
+                <div class="task-top">
+                    <text class="task-title">{{$item.name1}}</text>
+                    <text class="task-title" if="{{$item.name2}}">{{$item.name2}}</text>
+                    <text class="describe {{$item.name2?'':'mt5'}}">{{$item.explanation}}</text>
+                </div>
+                <div class="bottom">
+                    <div class="progress" if="{{$item.isComplete==0}}">
+                        <text class="progress-num">进度</text>
+                        <text class="progress-num" style="margin-left: 3px;">{{$item.completionNum}}/{{$item.taskNum}}</text>
+                        <div class="progress-line">
+                            <div class="progress-now" style="width:{{($item.completionNum/$item.taskNum)*100}}%"></div>
+                        </div>
+                    </div>
+                    <div class="finish" if="{{$item.isComplete==1}}">
+                        <text class="progress-num">已完成</text>
+                        <image src="/common/images/success-tip.png"></image>
+                    </div>
+                    <div>
+                    <!--<div class="sign" if="{{$item.type=='sign'}}"><text>签到</text></div>-->
+                        <div class="task-btn" if="{{$item.name1 =='预约议程' && $item.isComplete==0}}" on:click="goTask()"><text>前往任务</text></div>
+                    <!--<div class="task-btn" if="{{$item.remarks=='desktop' && $item.isComplete==0}}" on:click="goCardSelect"><text>添加卡片</text></div>-->
+                    </div>
+                </div>
+
+            </div>
+            <div class="borders"></div>
+        </block>
+        <div class="task-top1" if="{{taskList&&taskList.length!=0}}"></div>
+    </div>
+    <div class="tips" if="{{isShow}}">
+        <image src="/common/images/tips.png"></image>
+        <text>若想获得更多码力值，请您前往微信小程序-搜索华为开发者大会2023，登录后点击码力互动，完成更多任务</text>
+    </div>
+    <dialog id="loading" class="dialog-main2" oncancel="cancelDialogByLoadiong" style="top: 10%;">
+        <div class="dialog-div2">
+            <progress class="min-progress" type="circular"></progress>
+            <input type="text" class="btn-go3" value="">
+            </input>
+        </div>
+    </dialog>
+    <dialog id="hintDialog" style="margin-bottom: 50%;border-radius: 10px;">
+        <div class="dialog-div">
+            <div class="close" @click="closeDialog">
+                <image src="/common/images/close-jf.png"></image>
+            </div>
+            <div class="dialog-content">
+                <div style="display: flex;justify-content: center;">
+                    <image src="/common/images/dialog-tip.png"></image>
+                </div>
+                <div style="display: flex;flex-direction: column;">
+                    <div style="display: flex;justify-content: center;">
+
+                    </div>
+                    <div style="display: flex;justify-content: center;">
+                        <text class="dialog-con">{{text}}</text>
+                    </div>
+                </div>
+                <div style="display: flex;justify-content: center;">
+                    <div class="ok" @click="closeDialog">
+                        <text>好的</text>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </dialog>
+</div>

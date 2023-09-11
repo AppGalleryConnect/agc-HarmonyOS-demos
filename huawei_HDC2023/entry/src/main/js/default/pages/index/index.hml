@@ -1,0 +1,308 @@
+<element name='tab' src='../common-tab/common-tab.hml'></element>
+
+<div class="container-home">
+    <div class="header">
+        <div class="header-back"></div>
+        <text class="header-text">
+            首页
+        </text>
+        <div class="right-menu" @click="goCardSelect">
+            <image class="desktop-image" src="/common/images/desktop.png"></image>
+            <text class="desktop-text">添加至桌面</text>
+        </div>
+    </div>
+    <list>
+        <list-item clickeffect="false">
+            <div class="container">
+                <div class="tips">
+                    <image src="/common/images/hwLogo.png"></image>
+                   <!-- <div class="tips-box" @click="goMyTicket()">
+                        <text class="tips-text2">我的门票</text>
+                    </div>-->
+                </div>
+
+            <!--轮播-->
+                <div class="kv">
+                    <swiper on:touchstart="touchStartKv" on:touchend="touchEndKv" on:change="changeKv" class="swiper2" id="swiper2"
+                                autoplay="false" indicator="false" loop="true" digital="false" indicatormask="false">
+                        <div class="swiperContent" for="{{indexImgs}}">
+                            <image src="{{$item.coverImageRealPath}}" @click="goImageDetail($item)"></image>
+                        </div>
+                    </swiper>
+                </div>
+                <image src="/common/images/huiyi-bg.png" class="huiyi-bg"></image>
+                <image src="/common/images/sanyapo-bg.png" class="san-bg"></image>
+                <image src="/common/images/huoban-bg.png" class="huoban-bg"></image>
+
+                <div class="box">
+
+                <!--日程-->
+                    <div class="i-title pading">
+                        <div class="h1">
+                            <text>
+                                大会日程
+                            </text>
+                        </div>
+                        <div class="more " @click="go(1)">
+                            <text>
+                                更多
+                            </text>
+                            <image class="arrow" src="/common/images/more.png">
+
+                            </image>
+                        </div>
+                    </div>
+                    <div class="agenda-box pading">
+                        <swiper on:touchstart="touchStartAgenda" on:touchend="touchEndAgenda" on:change="changeAgenda" class="swiper" id="swiper" index="{{ agendaDataIndex }}"
+                                autoplay="false" indicator="false" loop="true" digital="false" indicatormask="false">
+                            <div class="swiperContent meetingSwiperContentNew " for="{{ subArtivleList }}">
+                                <div class="agenda-item" @click="goAgendaDetail($item)">
+                                    <div class="card1 card-bg{{ $item.m_meetingTypeNum }}">
+                                        <image src="/common/images/zt-meetingtype{{ $item.m_meetingTypeNum }}.png">
+                                        </image>
+                                        <text>{{ $item.m_meetingTypeCn }}</text>
+                                    </div>
+                                    <div class="card2">
+                                        <text class="card2-text">{{ $item.name }}</text>
+                                    </div>
+                                    <div class="card3">
+                                        <image src="/common/images/time.png"></image>
+                                        <text>{{ $item.agendaDate }}</text>
+                                    </div>
+                                    <div class="card4">
+                                        <image src="/common/images/live.png"></image>
+                                        <text>{{ $item.hotel }}</text>
+                                    </div>
+                                    <div class="card5">
+                                        <image src="/common/images/watch.png"></image>
+                                        <text>立即查看</text>
+                                    </div>
+                                </div>
+                            </div>
+                        </swiper>
+                    </div>
+                    <div class="common-dots">
+                        <block for="{{ subArtivleList }}">
+                            <image if="{{ $idx == agendaDataIndex }}" src="/common/images/fenge.png"></image>
+                            <div else class="common-info"></div>
+                        </block>
+                    </div>
+
+                <!--嘉宾-->
+                    <div class="i-title pading">
+                        <div class="h1">
+                            <text>
+                                特邀嘉宾
+                            </text>
+                        </div>
+                        <div class="more " @click="go(18)">
+                            <text>
+                                更多
+                            </text>
+                            <image class="arrow" src="/common/images/more.png">
+
+                            </image>
+                        </div>
+                    </div>
+
+                    <div class=" pading" @click="getGuestimgs">
+                        <swiper on:touchstart="touchStartGuest" on:touchend="touchEndGuest" class="swiper3" id="swiper3" index="{{ currentIndex }}" autoplay="false"
+                                indicator="false" loop="true"
+                                on:change="changeGuest" digital="false" indicatormask="false">
+                            <div class="swiper-box " for="{{ guestImgs }}">
+                                <div class="j-card">
+                                    <text class="j-card1">{{ $item.name }}</text>
+                                    <text class="j-card2">{{ $item.duty }}</text>
+                                </div>
+                                <image src="{{ $item.imageMapIdHarmony }}" class="home-user"></image>
+                            </div>
+                        </swiper>
+                    </div>
+                    <div class="common-dots">
+                        <block for="{{ guestImgs }}">
+                            <image if="{{ $idx == currentIndex }}" src="/common/images/fenge.png"></image>
+                            <div else class="common-info"></div>
+                        </block>
+                    </div>
+
+                <!--三丫坡风光-->
+                    <div class="i-title pading">
+                        <div class="h1">
+                            <text>
+                                三丫坡活动
+                            </text>
+                        </div>
+
+                    </div>
+                    <div class="pading sanyapo">
+                        <image src="/common/images/sanyapo.png" class="sanyapo-image"></image>
+                        <div class="sanya-box">
+                            <text class="sanya-title">华为三丫坡</text>
+                            <div class="sanya-text">
+                                <div class="sanya-left">
+                                    <image src="/common/images/live.png"></image>
+                                    <text>东莞市松山湖高新技术产业开发区大学路10号</text>
+                                </div>
+                                <div class="sanya-right" @click="go(21)">
+                                    <text>查看详情</text>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!--合作伙伴-->
+
+                    <div class="i-title pading">
+                        <div class="h1">
+                            <text>
+                                合作伙伴
+                            </text>
+                        </div>
+                        <div class="more " @click="go(20)">
+                            <text>
+                                更多
+                            </text>
+                            <image class="arrow" src="/common/images/more.png">
+                            </image>
+                        </div>
+                    </div>
+                    <div class="cooperative-partner-box pading">
+                        <swiper on:touchstart="touchStartCooperativePartner" on:touchend="touchEndCooperativePartner" on:change="changeCooperativePartner" class="swiper2" id="swiper4"
+                                index="{{ cooperativePartnerIndex }}"
+                                autoplay="false" indicator="false" loop="true" digital="false" indicatormask="false">
+                            <div class="swiperContent cooperativePartnerSwiperContent" for="{{ cooperativePartner }}">
+                                <div for="$item" class="wp33 {{$idx%3==0?'cp-left':$idx%3==1?'cp-left1':'cp-left2'}}">
+                                    <div class="cp-item" >
+                                        <image src="{{ $item }}"></image>
+                                    </div>
+                                </div>
+                            </div>
+                        </swiper>
+                    </div>
+<!--                    <div class="common-dots">-->
+<!--                        <block for="{{ cooperativePartner }}">-->
+<!--                            <image if="{{ $idx == cooperativePartnerIndex }}" src="/common/images/fenge.png"></image>-->
+<!--                            <div else class="common-info"></div>-->
+<!--                        </block>-->
+<!--                    </div>-->
+                </div>
+            </div>
+        </list-item>
+    </list>
+
+<!--隐私协议-->
+    <dialog id="concealDialog" class="dialog-main" oncancel="closeConcealDialog" style="top : 10%;">
+        <div class="dialog-div">
+            <list class="scroll-list" scrolleffect="no">
+                <list-item>
+                    <div class="dialog-conceal__content">
+                        <text class="p">
+                            华为开发者大会是由华为终端有限公司主办，并由华为软件技术有限公司（以下简称“华为”、“我们”）为您提供“2023华为开发者大会”（以下简称“会议”）购票报名服务。华为深知隐私对您的重要性，并会尊重您的隐私。本隐私政策（以下简称“本政策”）将阐述您在注册和参与华为举办的【2023华为开发者大会】（以下简称“会议”）时华为如何使用和保护您的个人隐私信息。请您仔细阅读了解。本政策可能并不涉及所有的数据处理情境，有关收集产品或服务特定数据的信息可能由华为在补充政策中，或者在收集数据时提供的通知中发布。
+                        </text>
+                        <text class="p">
+                            我们制定本政策的目的在于帮助您了解以下内容：
+                        </text>
+                        <text class="p">1、我们如何收集和使用您的个人信息</text>
+                        <text class="p">2、我们如何使用Cookie和同类技术</text>
+                        <text class="p">3、第三方共享信息</text>
+                        <text class="p">4、管理您的个人信息</text>
+                        <text class="p">5、信息存储地点及期限</text>
+                        <text class="p">6、本政策如何更新</text>
+                        <text class="p">7、如何联系我们</text>
+                        <text class="h2">
+                            1、我们如何收集和使用您的个人信息
+                        </text>
+                        <text class="p">
+                            个人数据是指单独使用或结合其他信息使用时能够确定个人身份的信息。当您同意本政策注册会议并通过会议网站及移动应用程序向华为提供您的个人信息，华为将使用这些个人信息为您提供会务服务及与会议相关的信息。
+                        </text>
+                        <text class="p">
+                            我们会收集您的订单信息用于购票。我们会收集您的姓名、联系电话、企业名称、行业、职位、地址、联系邮箱、身份证/护照号信息用于活动报名。我们提供电子普通发票和专用发票，如果您需要开具电子普通发票，我们还将收集您的发票抬头、税号、邮箱信息；如果您需要开具专用发票，需要您注册认证为企业开发者进行购票报名并开通付费服务。若您同意华为向您传递华为产品、服务和活动的最新资讯（「最新资讯」），华为会使用您提交的个人信息及联系方式，向您发送最新资讯。根据您选择、认可的方式，华为可能会通过电话与您联系。若您不希望继续收到这些最新资讯，您也可以随时选择退订。 为了给您更好的分发服务，我们会将您的华为帐号信息、订单信息分享给华为软件技术有限公司。
+                        </text>
+                        <text class="p">
+                            我们可能将您的个人数据用于以下目的：
+                        </text>
+                        <text class="p">(a)参会报名。</text>
+                        <text class="p">(b)参会现场签到。</text>
+                        <text class="p">(c)开具发票并发送到指定邮箱或者邮寄到您指定的地址。</text>
+                        <text class="p">(d)在您同意的情况下，与您联系；向您发送参会通知。如果您不想接收此类信息，则可以随时退订。</text>
+                        <text class="p">(e)开展内部审计、数据分析和研究，改善我们的产品和服务。</text>
+                        <text class="p">(f)遵从和执行适用的法律要求，相关的行业标准或我们的政策。</text>
+                        <text class="p">
+                            本次大会将开展实名参会及实名入场制度，所有参加会议的人员都需配合执行，在进入会场时提供报名时使用的证件原件完成核验。
+                        </text>
+                        <text class="p">
+                            （1）如果您在报名时选择同意使用人脸识别，您可以在活动当天通过人脸识别进入场馆活动区域；如果您在报名时没有选择同意使用人脸识别，您可以在活动当天选择通过人工通道完成身份权限验证后进入场馆，或您仍然可以选择通过人脸识别设备进入活动区域，但需在现场完成人脸识别使用授权。人脸识别仅用于验证您与您的证件信息一致，您的人脸数据不会被存储保留。人脸识别设备所识别的证件仅为中华人民共和国居民身份证。
+                        </text>
+                        <text class="p">
+                            （2）如果您是持有其它证件（如：护照、港澳居民来往内地通行证、台湾居民来往大陆通行证）且已在报名时提供该证件的信息，请向工作人员说明，工作人员会使用PDA（Portable Digital Assistance，简称PDA）匹配您输入的参会ID、邮箱、证件信息核验您的身份及权限，验证通过后进入活动区域，您在PDA输入的信息不会被存储保留。
+                        </text>
+                        <text class="p">
+                            我们还可能收集和使用非识别性数据。非识别性数据是指无法用于确定个人身份的数据。例如，我们会收集汇总的统计数据，例如网站访问量。我们收集此数据的目的在于了解用户如何使用此次会议的网站、产品和服务。借此，我们可以改善自己的服务，更好地满足客户需求。我们可能会自行决定出于其他目的收集、使用、处理、转移或披露非识别性数据。我们会尽力隔离您的个人数据和非识别性数据，并单独使用这两种数据。如果个人数据掺杂了非识别性数据，依旧会被视作个人数据处理。
+                        </text>
+                        <text class="p">
+                            当处理您的个人数据时，我们会遵从适用的法律要求基于适当的合法性基础予以处理，包括： (a) 当响应您的服务请求时为履行合同处理您的个人数据； (b) 基于您的同意处理您的个人数据；当与您联系、为改善我们的产品和服务，执行与改善我们的防损和反欺诈计划等目的处理您的个人数据时我们将基于我们或第三方的合法利益。这些合法利益包括，使我们能够更有效的管理和运营我们的业务并提供我们的产品和服务；保护我们的业务、系统、产品、服务和客户的安全；内部管理，遵从内部的政策和流程；我们在本政策中描述的其他合法利益等。
+                        </text>
+
+                        <text class="h2">
+                            2、我们如何使用Cookie和同类技术
+                        </text>
+                        <text class="h4">
+                            2.1 Cookie
+                        </text>
+                        <text class="p">
+                            为确保网站正常运转，我们有时会在计算机或移动设备上存储名为 Cookie 的小数据文件。Cookie 是一种网络服务器存储在计算机或移动设备上的纯文本文件。Cookie 的内容只能由创建它的服务器检索或读取。每个 Cookie 对您的网络浏览器或移动应用程序都是唯一的。Cookie 通常包含标识符、站点名称以及一些号码和字符。借助于 Cookie，网站能够存储用户偏好或购物篮内的商品等数据。
+                        </text>
+                        <text class="p">我们启用Cookie的目的与大多数网站或互联网服务提供商启用 Cookie 的目的一样，即改善用户体验。借助于 Cookie，网站能够记住用户的单次访问（使用会话 Cookie）或多次访问（使用永久 Cookie）。借助于 Cookie，网站能够保存设置，例如计算机或移动设备的语言、字体大小和其他浏览偏好。这意味着，用户无需在每次访问时重新配置用户偏好设置。如果某个网站不使用 Cookie，那么在用户每一次打开网页时，该网站都会将其视为新访客。例如，如果您登录某个网站后转到另一个网页，该网站就不会识别出您，而您会被再次注销。我们不会将 Cookie 用于本政策所述目的之外的任何用途。您可根据自己的偏好管理或删除 Cookie。有关详情，请参见 https://www.aboutcookies.org/。您可以清除计算机上保存的所有 Cookie，大部分网络浏览器都设有阻止 Cookie 的功能。但如果您这么做，则需要在每一次访问我们的网站时亲自更改用户设置。如需详细了解如何更改浏览器设置，请访问以下链接: Internet Explorer(https://support.microsoft.com/zh-cn/help/260971/description-of-cookies) Google Chrome(https://support.google.com/chrome/bin/answer.py?hl=en-GB&answer=95647&p=cpn_cookies) Mozilla Firefox(http://support.mozilla.org/en-US/kb/Cookies) Safari Opera(http://support.apple.com/kb/PH5042) </text>
+                        <text class="h4">
+                            2.2 网站信标和像素标签
+                        </text>
+                        <text class="p">
+                            除 Cookie 外，我们还会在网站上使用网站信标和像素标签等其他同类技术。例如，我们向您发送的电子邮件可能含有链接至华为网站内容的点击 URL。如果您点击该链接，我们则会跟踪此次点击，帮助我们了解您的产品和服务偏好并改善客户服务。网站信标通常是一种嵌入到网站或电子邮件中的透明图像。借助于电子邮件中的像素标签，我们能够获知电子邮件是否被打开。如果您不希望自己的活动以这种方式被追踪，则可以随时从我们的寄信名单中退订。
+                        </text>
+                        <text class="p">您使用我们的网站意味着您同意按照如上所述使用Cookie，网站信标和像素标签。</text>
+                        <text class="h2">
+                            3、与第三方共享
+                        </text>
+
+                        <text class="p">只有符合下列情况时，我们才会披露您的个人信息。在下列情形之外，我们不会将您的个人信息披露给第三方。</text>
+                        <text class="p">(a) 将您的个人信息披露给其他华为分公司或授权合作的第三方。根据您的请求，我们可能需要通过华为其他分公司或某些合作方为您提供某些服务。因此我们需要将您的部分个人信息共享给该分公司或该合作方，以便向您提供相应服务。根据会议实名要求，我们向赛诺贝斯（北京）营销技术股份有限公司提供您的身份证信息、联系信息用于会议入场身份验证。为了能将发票安全寄送到您的手中，我们必须与第三方快递公司共享您的收件人姓名、联系电话、邮寄地址信息。我们将严格禁止合作方把您的个人信息用于其他任何目的；</text>
+                        <text class="p">(b) 依法律要求，披露您的个人信息。依法律法规、诉讼的要求，我们可能会披露您的相关信息。</text>
+                        <text class="h2">4、管理您的个人信息</text>
+                        <text class="p">您应确保提交的所有个人数据都准确无误。我们会尽力维护个人数据的准确和完整，并及时更新这些数据。</text>
+                        <text class="p">当适用的法律要求的情况下，您可能(1)有权访问我们持有的关于您的特定的个人数据；(2)要求我们更新或更正您的不准确的个人数据；(3)拒绝或限制我们使用您的个人数据；以及(4)要求我们删除您的个人数据。如果您想行使相关的权利，请通过hdctogether@huawei.com与我们取得联系。为保障安全，您可能需要提供书面请求。如果我们有合理依据认为这些请求存在欺骗性、无法实行或损害他人隐私权，我们则会拒绝处理请求。</text>
+                        <text class="p">当适用的法律要求的情况下，当我们基于您的同意处理您的个人数据时，您还有权随时撤销您的同意。但撤销同意不会影响撤销前我们基于您的同意处理您个人数据的合法性及效力，也不影响我们基于其他适当的正当性基础处理您的个人数据。</text>
+                        <text class="h2">5、信息存储地点及期限</text>
+                        <text class="p">我们重视个人数据的安全。我们采用适当的物理、管理和技术保障措施来保护您的个人数据不被未经授权访问、披露、使用、修改、损坏或丢失。例如，我们会使用加密技术确保数据的机密性；我们会使用保护机制防止数据遭到恶意攻击；我们会部署访问控制机制，确保只有授权人员才可访问个人数据；若发生信息泄露事件，我们会根据所适用的法律法规处理，并采取所有合理的措施减轻或消除事件的影响。</text>
+                        <text class="p">本次收集信息将会传输并保存至中华人民共和国境内的服务器。我们仅在实现本声明所述目的所必需的时间内保留您的个人信息，并在超出下述保留时间后删除或匿名化处理您的个人信息，除非法律法规另有要求。</text>
+                        <text class="p">您的活动报名信息，如姓名、联系电话、联系邮箱、企业名称、行业、职位、地址、身份证/护照号等信息将在活动结束后两（2）年内删除。</text>
+                        <text class="p">您的购票订单信息、发票信息将在活动结束后七（7）年删除，您可以选择是否参加本次活动。</text>
+                        <text class="p">此外，当我们的产品或服务发生停止运营的情形时，我们将以推送通知、公告等形式通知您，并在合理的期限内删除您的个人信息或进行匿名化处理。</text>
+                        <text class="h2">6、本政策如何更新</text>
+                        <text class="p">华为保留不时更新或修改本政策的权利。如果我们的隐私声明变更，我们会将最新版隐私政策发布在此网站。如果我们对隐私政策做出了重大变更，我们还可能会通过不同渠道向您发送变更通知，例如，在我们的网站上发布通知或者向您发布单独的通知。欢迎您随时访问本隐私声明了解详细内容。</text>
+                        <text class="h2">7、如何联系我们</text>
+                        <text class="p">我们指定了个人信息保护负责人，您可以通过https://consumer.huawei.com/cn/legal/privacy-questions/联系个人信息保护负责人。您可以通过访问https://consumer.huawei.com/cn/legal/privacy-questions/与其取得联系，我们会尽快回复。</text>
+                        <text class="p">公司注册地址：江苏省南京市雨花台区软件大道101号，华为软件技术有限公司。邮编：210012。</text>
+                        <text class="p">如果您对我们的回复不满意，特别是当我们的个人信息处理行为损害了您的合法权益时，您还可以通过向有管辖权的人民法院提起诉讼、向行业自律协会或政府相关管理机构投诉等外部途径进行解决。您也可以向我们了解可能适用的相关投诉途径的信息。</text>
+                        <text class="p">华为将始终遵照我们的隐私政策来收集和使用您的信息。有关我们的隐私政策，可参阅https://consumer.huawei.com/minisite/legal/privacy/statement.htm?code=CN&language=zh-CN。</text>
+                    </div>
+                </list-item>
+            </list>
+
+            <div class="button">
+                <text class="btn-go" value="" @click="disagreeConceal"></text>
+                <text class="btn-go" value="" @click="agreeConceal"></text>
+            </div>
+        </div>
+    </dialog>
+
+<!--悬浮按钮-->
+    <!--<div class="home-jifen" on:click="goMyTicket()">
+        <image src="/common/images/ticket.png"></image>
+        <text>我的门票</text>
+    </div>-->
+    <image class="home-ticket" on:click="goMyTicket()"  src="/common/images/ticket.png"></image>
+
+
+<!--底部TAB-->
+    <tab type="1"></tab>
+</div>

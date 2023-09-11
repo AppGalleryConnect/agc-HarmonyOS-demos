@@ -1,0 +1,53 @@
+<div class="container">
+    <image src="/common/images2/guestDetails-bg.png" class="guest-bg-new"></image>
+    <div class="header">
+        <div class="header-back " @click="back">
+            <image></image>
+        </div>
+        <text class="header-text">
+            嘉宾
+        </text>
+        <div class="header-menu">
+        </div>
+    </div>
+
+    <div class="guest-info">
+        <div class="guest-header-box guest-header-box{{ num }}">
+            <image src="{{ detail.imageMapIdHarmony }}" if="{{ detail.imageMapIdHarmony }}"></image>
+        </div>
+        <div class="guest-info-box">
+            <text class="item-name">
+                <span>{{ detail.name }}</span>
+            </text>
+            <text class="item-desc">
+                <span>{{ detail.duty }}</span>
+            </text>
+        </div>
+    </div>
+
+    <list class="time-line-box" scrolleffect="no" id="list" on:scrolltop="scrolltop"
+          on:scroll="scroll">
+        <list-item class="tl-title" clickeffect="false">
+            <div class="red-line"></div>
+            <text class="tl-title-text">演讲议程</text>
+        </list-item>
+        <list-item class="tl-item" clickeffect="false" for="{{ timeLine }}">
+            <div class="tl-content">
+                <div class="tlc-date">
+                    <text class="date-yd">{{ $item.agendaDate }}</text>
+                    <text class="date-jg">{{ $item.startTime }}</text>
+                    <text class="date-hm">{{ $item.endTime }}</text>
+                </div>
+                <div class="tl-bg-box-border">
+                    <div class="tl-bg-box">
+                        <text class="type">{{ $item.m_meetingTypeCn }}</text>
+                        <text class="tlc-title">{{ $item.name }}</text>
+                        <div class="tlc-fuck">
+                            <text class="tlc-desc">{{ $item.hotel }}</text>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </list-item>
+    </list>
+</div>

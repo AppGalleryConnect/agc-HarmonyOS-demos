@@ -1,0 +1,85 @@
+{
+  "data": {
+    "agendaSwiperData": [{
+      "agenda1": {
+        "agendaDate": "08月04日",
+        "agendaTime": "14:30-16:30",
+        "name": "大会主题演讲",
+        "hotel": "东莞篮球中心"
+      },
+      "agenda2": {
+        "agendaDate": "08月05日",
+        "agendaTime": "09:00-17:00",
+        "name": "Codelabs",
+        "hotel": "B3教学楼一楼中庭南侧（彼陂咖啡旁）"
+      },
+      "isTwo": true
+    }],
+    "agendaSwiperIndex": 0
+  },
+  "actions": {
+    "agendaDetail": {
+      "action": "router",
+      "abilityName": "com.smarket.hdc2023.MainAbility",
+      "params": {
+        "message": "agendaDetail",
+        "data": "{{agendaSwiperData[agendaSwiperIndex].agenda1.subSeminarId}}",
+        "data2": "{{agendaSwiperData[agendaSwiperIndex].agenda1.hasGroupName}}",
+        "data3": "{{agendaSwiperData[agendaSwiperIndex].agenda1.startTime}}"
+      }
+    },
+    "agendaDetail2": {
+      "action": "router",
+      "abilityName": "com.smarket.hdc2023.MainAbility",
+      "params": {
+        "message": "agendaDetail",
+        "data": "{{agendaSwiperData[agendaSwiperIndex].agenda2.subSeminarId}}",
+        "data2": "{{agendaSwiperData[agendaSwiperIndex].agenda2.hasGroupName}}",
+        "data3": "{{agendaSwiperData[agendaSwiperIndex].agenda2.startTime}}"
+      }
+    },
+    "myOrAllAgenda": {
+      "action": "router",
+      "abilityName": "com.smarket.hdc2023.MainAbility",
+      "params": {
+        "message": "myOrAllAgenda",
+        "data": "全部议程"
+      }
+    },
+    "agendaSwiperDataChange": {
+      "action": "message",
+      "params": {
+        "action": "agendaSwiperDataChange2",
+        "message": "{{agendaSwiperIndex}}"
+      }
+    },
+    "agendaSwiperDataChangeUp": {
+      "action": "message",
+      "params": {
+        "action": "agendaSwiperDataChangeUp",
+        "message": "{{agendaSwiperIndex}}"
+      }
+    },
+    "goIntegral": {
+      "action": "router",
+      "abilityName": "com.smarket.hdc2023.MainAbility",
+      "params": {
+        "message": "goIntegral"
+      }
+    },
+    "goTravelList": {
+      "action": "router",
+      "abilityName": "com.smarket.hdc2023.MainAbility",
+      "params": {
+        "message": "goTravelList"
+      }
+    },
+    "myTickets": {
+      "action": "router",
+      "abilityName": "com.smarket.hdc2023.MainAbility",
+      "params": {
+        "message": "myTickets"
+      }
+    }
+  }
+}

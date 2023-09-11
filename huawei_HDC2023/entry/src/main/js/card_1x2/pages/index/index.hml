@@ -1,0 +1,18 @@
+<div class="div-card">
+    <div class="meeting_1x2_div-card">
+        <div class="div-actions">
+            <div class="div-action-container"  onclick="goIndex">
+                <div class="img-action-cirle" >
+                    <image class="img-action" src="/common/meeting_1x2_card1.png"></image>
+                </div>
+                <text class="title">HDC2023</text>
+            </div>
+            <div class="div-action-container "  onclick="goIntegral">
+                <div class="img-action-cirle border-orange" >
+                    <image class="img-actions" src="/common/meeting_1x2_card2.png"></image>
+                </div>
+                <text class="title">码力互动</text>
+            </div>
+        </div>
+    </div>
+</div>

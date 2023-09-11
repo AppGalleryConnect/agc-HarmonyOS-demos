@@ -1,0 +1,140 @@
+<element name='tab' src='../common-tab/common-tab.hml'></element>
+
+<div class="container">
+    <image src="/common/images2/service.png" class="top-image"></image>
+    <image src="/common/images2/service-bottom.png" class="bottom-image"></image>
+    <div class="header">
+        <div class="header-back ">
+           <!-- <image >
+            </image>-->
+        </div>
+        <text class="header-text">
+            服务
+        </text>
+        <div class="right-menu" @click="goCardSelect">
+            <image class="desktop-image" src="/common/images/desktop.png"></image>
+            <text class="desktop-text">添加至桌面</text>
+        </div>
+    </div>
+
+    <div class="more-service">
+        <text class="more-service-cn">更多服务</text>
+        <div class="more-service-box">
+            <text>2023</text>
+        </div>
+    </div>
+    <div class="more-service-en"><text> </text></div>
+<!--    导航结束-->
+    <list class="box" scrolleffect="no" id="list">
+       <list-item clickeffect="false">
+           <div class="item " onclick="go(3)">
+               <div class="text">
+                   <image src="/common/images2/dahui-1.png"></image>
+                   <text class="item-text">
+                       <span>大会介绍</span>
+                   </text>
+               </div>
+               <div class="button">
+                   <text>查看详情</text>
+                   <image src="/common/images2/dahui-right.png"></image>
+               </div>
+           </div>
+           <div class="item" onclick="go(4)">
+               <div class="text">
+                   <image src="/common/images2/dahui-2.png"></image>
+                   <text class="item-text">
+                       <span>大会地址</span>
+                   </text>
+               </div>
+               <div class="button">
+                   <text>查看详情</text>
+                   <image src="/common/images2/dahui-right.png"></image>
+               </div>
+           </div>
+       </list-item>
+       <list-item clickeffect="false">
+           <div class="item " onclick="goGuide">
+               <div class="text">
+                   <image src="/common/images2/dahui-3.png"></image>
+                   <text class="item-text">
+                       <span>导览</span>
+                   </text>
+               </div>
+               <div class="button">
+                   <text>查看详情</text>
+                   <image src="/common/images2/dahui-right.png"></image>
+               </div>
+           </div>
+           <div class="item " onclick="go(6)">
+               <div class="text">
+                   <image src="/common/images2/dahui-4.png"></image>
+                   <text class="item-text">
+                       <span>大会交通</span>
+                   </text>
+               </div>
+               <div class="button">
+                   <text>查看详情</text>
+                   <image src="/common/images2/dahui-right.png"></image>
+               </div>
+           </div>
+
+       </list-item>
+        <list-item clickeffect="false">
+            <div class="item " onclick="go(21)">
+                <div class="text">
+                    <image src="/common/images2/dahui-5.png"></image>
+                    <text class="item-text">
+                        <span>码力互动</span>
+                    </text>
+                </div>
+                <div class="button">
+                    <text>查看详情</text>
+                    <image src="/common/images2/dahui-right.png"></image>
+                </div>
+            </div>
+            <div class="item " onclick="go(7)">
+                <div class="text">
+                    <image src="/common/images2/dahui-6.png"></image>
+                    <text class="item-text">
+                        <span>大会餐饮</span>
+                    </text>
+                </div>
+                <div class="button">
+                    <text>查看详情</text>
+                    <image src="/common/images2/dahui-right.png"></image>
+                </div>
+            </div>
+
+        </list-item>
+        <list-item clickeffect="false">
+            <div class="item mb90" onclick="go(8)">
+                <div class="text">
+                    <image src="/common/images2/dahui-7.png"></image>
+                    <text class="item-text">
+                        <span>Q&A</span>
+                    </text>
+                </div>
+                <div class="button">
+                    <text>查看详情</text>
+                    <image src="/common/images2/dahui-right.png"></image>
+                </div>
+            </div>
+            <div class="item mb90" onclick="go(24)">
+                <div class="text">
+                    <image src="/common/images2/dahui-8.png"></image>
+                    <text class="item-text">
+                        <span>联系我们</span>
+                    </text>
+                </div>
+                <div class="button">
+                    <text>查看详情</text>
+                    <image src="/common/images2/dahui-right.png"></image>
+                </div>
+            </div>
+        </list-item>
+
+    </list>
+
+<!--底部TAB-->
+    <tab type="4"></tab>
+</div>

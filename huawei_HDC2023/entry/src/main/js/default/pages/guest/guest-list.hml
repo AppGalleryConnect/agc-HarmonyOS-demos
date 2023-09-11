@@ -1,0 +1,73 @@
+<div class="container">
+    <image src="/common/images2/guest-bg-new.png" class="guest-bg"></image>
+    <div class="header">
+        <div class="header-back " @click="back">
+            <image></image>
+        </div>
+        <text class="header-text">
+            嘉宾
+        </text>
+        <div class="right-menu" @click="goCardSelect">
+            <image class="desktop-image" src="/common/images/desktop.png"></image>
+            <text class="desktop-text">添加至桌面</text>
+        </div>
+    </div>
+
+<!--搜索-->
+    <div class="bg-1" id="tob-bar">
+        <div class="search-box">
+
+            <div class="search">
+                <div class="ipt-icon__search" onclick="closePanel"></div>
+                <input type="text" class="ipt" placeholder="请输入您感兴趣的嘉宾" on:change="searchChange"
+                       enterkeytype="search" on:enterkeyclick="closePanel">
+                </input>
+            </div>
+
+        </div>
+    </div>
+
+
+    <refresh refreshing="{{ fresh }}" onrefresh="refresh">
+
+    <!--没数据-->
+        <div class="item-content" show="{{ isNullShow }}">
+
+        <!--暂无数据-->
+            <div class="no-data">
+                <image src="/common/images/no-agenda.png">
+
+                </image>
+                <text>
+                    <span>暂无内容</span>
+                </text>
+            </div>
+        </div>
+
+        <list class="list" scrolleffect="no" id="list" show="{{ ! isNullShow }}">
+
+        <!--主题演讲-->
+            <list-item class="tab-content" for="{{ main }}" clickeffect="false">
+                <div class="guest-content">
+                    <div class="item-header item-header{{ $idx % 3 }}">
+                        <image src="{{ $item.imageMapIdHarmony }}" if="{{ $item.imageMapIdHarmony }}">
+                        </image>
+                    </div>
+                    <div class="item-info">
+                        <text class="item-info-name">
+                            <span>{{ $item.name }}</span>
+                        </text>
+                        <text class="item-info-desc">
+                            <span>{{ $item.duty }}</span>
+                        </text>
+                    </div>
+                </div>
+                <div class="right-box">
+                    <!--<image class="" src="/common/images2/right.png"></image>-->
+                </div>
+            </list-item>
+            <list-item style="height: 15px;"></list-item>
+        </list>
+
+    </refresh>
+</div>

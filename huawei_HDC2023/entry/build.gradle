@@ -1,0 +1,61 @@
+apply plugin: 'com.huawei.ohos.hap'
+apply plugin: 'com.huawei.ohos.decctest'
+apply plugin: 'com.huawei.agconnect'
+
+ohos {
+    signingConfigs {
+        debug {
+            storeFile file('C:\\Users\\lijia_dzoris3\\.ohos\\config\\auto_debug_hdc2023_com.smarket.hdc2023_30086000693533164.p12')
+            storePassword '0000001A343802F4A7787E07FE9C04DF413979C02C613D0C60277AF4C6123E519493F782A6BEF075AC07'
+            keyAlias = 'debugKey'
+            keyPassword '0000001A55C29CCF72D9C0F28B25A7E6EB4A73F0613985EDEA34935A7AA4DFE22EF5AE31C9DDBB406ED3'
+            signAlg = 'SHA256withECDSA'
+            profile file('C:\\Users\\lijia_dzoris3\\.ohos\\config\\auto_debug_hdc2023_com.smarket.hdc2023_30086000693533164.p7b')
+            certpath file('C:\\Users\\lijia_dzoris3\\.ohos\\config\\auto_debug_hdc2023_com.smarket.hdc2023_30086000693533164.cer')
+        }
+        release {
+            storeFile file('D:\\ZnuoCode\\hdc2023\\key\\hdc202110.p12')
+            storePassword '00000018272340DBD237E9790166DEFAE1A265CC68083751E240DD2E832916A3C010A3D5D1017510'
+            keyAlias = 'hdc2021'
+            keyPassword '000000187DE723F4B9E78DF120829E27F056ED708D3C7F3BA7F17757A8C37845A8EA9827F0801E9C'
+            signAlg = 'SHA256withECDSA'
+            profile file('D:\\ZnuoCode\\hdc2023\\key\\HDC2023Release.p7b')
+            certpath file('D:\\ZnuoCode\\hdc2023\\key\\HDC2021.cer')
+        }
+    }
+    compileSdkVersion 6
+    defaultConfig {
+        compatibleSdkVersion 5
+    }
+    showInServiceCenter true
+    buildTypes {
+        release {
+            proguardOpt {
+                proguardEnabled true
+                rulesFiles 'proguard-rules.pro'
+            }
+        }
+        debug {
+            proguardOpt {
+                proguardEnabled false
+                rulesFiles 'proguard-rules.pro'
+            }
+        }
+    }
+    compileOptions {
+        annotationEnabled true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar', '*.har'])
+    implementation 'org.jetbrains:annotations:19.0.0'
+    testImplementation 'junit:junit:4.13'
+    ohosTestImplementation 'com.huawei.ohos.testkit:runner:1.0.0.200'
+    implementation 'com.huawei.hms:hianalytics-harmony:6.10.0.301'
+    implementation 'com.huawei.hms:jsb-ohos-adapter:5.3.0.303'
+    implementation 'com.huawei.agconnect:agconnect-core-harmony:1.3.0.300'
+}
+decc {
+    supportType = ['html', 'xml']
+}

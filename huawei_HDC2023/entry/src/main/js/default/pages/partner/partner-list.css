@@ -1,0 +1,341 @@
+.container {
+    flex-direction: column;
+    background-image: url("/common/images/bg-help.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center bottom;
+}
+.top-image{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 204px;
+    height: 308px;
+}
+.header {
+    position: fixed;
+    height: 80px;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    padding-top: 40px;
+    padding-bottom: 5px;
+/*    background-image: url("/common/images/agenda-top.png");*/
+    background-color: #ffffff;
+/*    background-repeat: no-repeat;*/
+/*    background-size: 100% 80px;*/
+}
+
+
+
+.header-text {
+    font-size: 16px;
+    color: #000000;
+
+}
+.header image {
+    height: 18px;
+    width: 18px;
+}
+.right-menu{
+    width: 100px;
+    display: flex;
+    justify-content: flex-end;
+}
+.right-menu .desktop-image{
+    width: 17px ;
+    height: 14px;
+    right:5px;
+}
+.desktop-text{
+    font-size: 12px;
+    color: #000000;
+    margin-right: 15px;
+}
+/* @media (dark-mode: false) {
+    .header {
+        position: fixed;
+        height: 80px;
+        align-items: center;
+        justify-content: space-between;
+        top: 0;
+        left: 0;
+        padding-top: 40px;
+        padding-bottom: 5px;
+        background-image: url("/common/images/black.png");
+        background-repeat: no-repeat;
+        background-size: 100% 80px;
+    }
+
+    .header-text {
+        font-size: 16px;
+        color: white;
+    }
+
+    .header-menu {
+        width: 40px;
+        background-image: url("/common/images/icon-mean-white.png");
+        background-repeat: no-repeat;
+        background-size: 18px 18px;
+    }
+    .header-back {
+        width: 85px;
+        margin-left: 15px;
+        background-image: url("/common/images/icon-back-white.png");
+        background-repeat: no-repeat;
+        background-size: 18px 18px;
+    }
+    .desktop-text{
+        font-size: 12px;
+        color:white;
+    }
+} */
+.right-menu .desktop-image{
+    width: 17px ;
+    height: 14px;
+    right:5px;
+}
+.header-back {
+    width: 85px;
+    margin-left: 15px;
+    background-image: url("/common/images/icon-back.png");
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+}
+
+.header-menu {
+    width: 40px;
+    background-image: url("/common/images/icon-menu.png");
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+}
+
+/*下拉菜单开始*/
+
+.side-menu {
+    background-color: #fff;
+    position: fixed;
+    top: 80px;
+    right: 0;
+    width: 45%;
+    padding: 10px 20px;
+    border-radius: 20px 0  0  0;
+    flex-direction: column;
+    height: 180px;
+    box-shadow: -5px 6px 10px #D8E4F2;
+}
+
+.side-menu .menu-item {
+    border-bottom: 1px solid #EEEEEE;
+    padding: 10px 0;
+}
+
+.side-menu .menu-item-last {
+    border-bottom: 0px solid #EEEEEE;
+}
+
+.side-menu .menu-item image {
+    width: 25px;
+    height: 25px;
+    margin-right: 15px;
+}
+
+.side-menu .menu-item text {
+    font-size: 14px;
+    color: #111;
+}
+
+/*/下拉菜单结束*/
+
+.box {
+    padding-left: 15px;
+    padding-right: 15px;
+    flex-direction: row;
+    margin-top: 110px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+.item {
+    width: 33.3%;
+    flex-direction: column;
+    margin: 8px;
+    
+}
+.mr2{
+    margin-right: 2%;
+}
+.item .icon {
+    width: 100%;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-color: #ffffff;
+}
+
+.item image {
+}
+
+.item .text {
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.item .text text {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+.side-menu-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-color: #ffffff;
+}
+
+/*隐私弹窗*/
+
+
+.dialog-main {
+    width: 300px;
+    margin-bottom: 20%;
+    margin-top: 20%;
+
+}
+
+.dialog-div {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    padding-top: 140px;
+    background-image: url("/common/images/pic_conceal.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.scroll-list{
+    width: 100%;
+    height: 100%;
+    padding-bottom: 4px;
+}
+
+.dialog-div .button {
+    flex-direction: row;
+}
+
+.dialog-div-text {
+    flex-direction: row;
+    background-color: red;
+    height: 300px;
+}
+
+.dialog-div .close image {
+    width: 14px;
+    height: 14px;
+}
+
+.dialog-div .success-pic {
+    margin-bottom: 15px;
+    justify-content: center;
+}
+
+.dialog-div .success-pic image {
+    width: 100px;
+    height: 50px;
+}
+
+.dialog-div .dialog-h1 {
+    line-height: 21px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.dialog-div .dialog-h1>div {
+    justify-content: center;
+}
+
+.dialog-div .dialog-h1 text {
+    color: #333;
+    font-size: 14px;
+}
+
+.dialog-div .dialog-h2 {
+    justify-content: center;
+}
+
+.dialog-div .dialog-h2 text {
+    color: #666;
+    font-size: 12px;
+}
+
+.btn-go {
+    background-color: #00000000;
+    border-radius: 0px;
+    height: 40px;
+    width: 50%;
+}
+
+.btn-text-info {
+    background-color: #00000000;
+    border-radius: 0px;
+    flex-direction: row;
+    text-align: center;
+}
+
+.btn-text-info-title {
+    font-size: 13px;
+}
+
+.btn-text-info-info {
+    font-size: 11px;
+    max-height: 100px;
+    text-align: start;
+    margin-top: 5px;
+}
+
+
+.btn-go text {
+    font-size: 14px;
+    color: #fff;
+}
+
+.dialog-conceal__content {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px 30px;
+}
+
+.dialog-conceal__content  .h2 {
+    font-size: 16px;
+    margin-top: 16px;
+    margin-bottom: 8px;
+    color: #000;
+    text-align: left;
+}
+
+.dialog-conceal__content  .h4 {
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    color: #333333;
+    text-align: left;
+}
+
+.dialog-conceal__content  .p {
+    font-size: 14px;
+    color: #666666;
+    text-align: left;
+}
+/*隐私弹窗*/

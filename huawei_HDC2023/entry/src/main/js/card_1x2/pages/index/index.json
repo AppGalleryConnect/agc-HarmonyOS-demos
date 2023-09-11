@@ -1,0 +1,18 @@
+{
+  "actions": {
+    "goIndex": {
+      "action": "router",
+      "abilityName": "com.smarket.hdc2023.MainAbility",
+      "params": {
+        "message": "goIndex"
+      }
+    },
+    "goIntegral": {
+      "action": "router",
+      "abilityName": "com.smarket.hdc2023.MainAbility",
+      "params": {
+        "message": "goIntegral"
+      }
+    }
+  }
+}

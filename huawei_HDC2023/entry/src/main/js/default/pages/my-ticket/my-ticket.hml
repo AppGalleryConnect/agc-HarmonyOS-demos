@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="topImage"></div>
+    <div class="header">
+        <div class="header-back " @click="back">
+            <image>
+            </image>
+        </div>
+        <text class="header-text">
+            我的门票
+        </text>
+        <div class="right-menu" @click="goCardSelect">
+            <image class="desktop-image" src="/common/images/desktop.png"></image>
+            <text class="desktop-text">添加至桌面</text>
+        </div>
+    </div>
+
+    <div class="bg">
+        <div class="title-bg">
+            <image class="title-icon" src="/common/images/fuck01.png"></image>
+            <text class="title">
+                <span>{{ i_ticketType }}</span>
+            </text>
+            <image class="title-icon" src="/common/images/fuck02.png"></image>
+        </div>
+        <div class="qrcode_bg">
+            <qrcode value="{{ qrCode }}" class="qrcode" alt="二维码"/>
+        </div>
+        <div class="time-new time-frist">
+            <text class="time-new-h1">
+                <span>参会时间</span>
+            </text>
+            <text class="time-new-h2">
+                <span>{{ time }}</span>
+            </text>
+        </div>
+        <div class="time-new">
+            <text class="time-new-h1">
+                <span>参会地点</span>
+            </text>
+            <text class="time-new-h2">
+                <span>中国东莞 · 松山湖</span>
+            </text>
+
+        </div>
+        <div class="btn">
+            <!--<text>截图保存至相册</text>-->
+        </div>
+    </div>
+    <div class="tips">
+        <text class="tips1">以上是您的参会二维码，请在会议签到时出示</text>
+        <text class="tips2">签到时需携带个人有效身份证件（学生请提供学生证原件）</text>
+    </div>
+</div>
