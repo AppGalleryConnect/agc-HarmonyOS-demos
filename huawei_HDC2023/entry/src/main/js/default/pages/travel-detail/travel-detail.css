@@ -1,0 +1,242 @@
+.container {
+    flex-direction: column;
+    background-image: url("/common/images/bg-help.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-color: #fff;
+    background-position: center bottom;
+    position: relative;
+}
+
+.header {
+    position: fixed;
+    height: 80px;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    padding:40px 16px 5px;
+    background-color: #fff;
+
+}
+
+
+
+.header-text {
+    font-size: 16px;
+    color: #000000;
+    font-weight: 500
+}
+.header-menu{
+    width: 85px;
+}
+@media (dark-mode: false) {
+    .header-back {
+        width: 85px;
+        background-image: url("/common/images/icon-back-white.png");
+        background-repeat: no-repeat;
+        background-size: 18px 18px;
+    }
+}
+.header-back {
+    width: 85px;
+    background-image: url("/common/images/icon-back.png");
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+}
+.header-back image {
+    height: 18px;
+    width: 18px;
+}
+.header-menu image {
+    width: 17px;
+    height: 14px;
+}
+.right-text{
+    font-size:12px;
+    color: #000000;
+    margin-left: 5px;
+}
+.content-sy{
+/*    margin-top: 85px;*/
+    display: flex;
+    flex-direction: column;
+}
+.swiper-con{
+
+}
+.swiper{
+    min-height: 200px;
+    width: 100%;
+    margin-top: 85px;
+}
+.swiper-img{
+/*    height: 211px;*/
+    width:100%;
+}
+.content-detail{
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(360deg, #F1F4F7 0%, rgba(241,244,247,0) 100%);
+}
+
+.head{
+display: flex;
+    flex-direction: column;
+}
+.head-title{
+    color: #293C5D;
+    font-size: 16px;
+    margin-left: 18px;
+    margin-bottom: 10px;
+    margin-top: 12px;
+    height: 34px;
+    max-lines: 1;
+    overflow: hidden ;
+    text-overflow: ellipsis;
+}
+.head-address{
+    margin-left: 18px;
+    display: flex;
+    align-items: center;
+}
+.head-address image{
+    width: 11px;
+    height: 12px;
+}
+.head-address text{
+    font-size: 10px;
+    color: #949EAE;
+    margin-left: 5px;
+}
+
+.introduce{
+    background-color: white;
+    border-radius: 0px 0px 20px 20px;
+    padding: 17px;
+    margin-top: 17px;
+    display: flex;
+    flex-direction: column;
+}
+.detail-right{
+    width: 264px;
+    height: 309px;
+    position: absolute;
+    right: 0;
+    top: -50px;
+}
+.introduce-head{
+    display: flex;
+    align-items: center;
+}
+.introduce-head image{
+    width: 3px;
+    height: 13px;
+}
+.introduce-head text{
+    font-size: 15px;
+    font-family: MicrosoftYaHeiUI-Bold, MicrosoftYaHeiUI;
+    font-weight: bold;
+    color: #293C5D;
+    margin-left: 7px;
+}
+.introduce-content{
+    font-size: 12px;
+    font-family: MicrosoftYaHei;
+    color: #898989;
+    margin-top: 12px;
+
+}
+.introduce-content p{
+    font-size: 12px;
+    font-family: MicrosoftYaHei;
+    color: #898989;
+    line-height: 18px;
+}
+.voice{
+    display: flex;
+    flex-direction: column;
+}
+.voice-list{
+    background-image: url('/common/images3/voice-bg.png');
+    background-size: 100% 100%;
+    width: 100%;
+    height: 83px;
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-position: center;
+}
+.voice-left{
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    margin-right: 10px;
+    justify-content: center;
+    width: 75%;
+}
+.voice-title{
+    font-size: 16px;
+    color: #293C5D;
+/*    margin-bottom: 6px;*/
+}
+.voice-tag{
+    font-size: 14px;
+    color: #949EAE;
+}
+.voice-list image{
+    width: 38px;
+    height: 37px;
+    margin-right: 40px;
+}
+.video{
+    height: 192px;
+    width: 100%;
+    margin-top: 12px;
+}
+.common-dots{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 13px;
+    width: 100%;
+}
+.common-dots image{
+    width: 41px;
+    height: 6px;
+    margin: 0 0 0 8px;
+}
+.common-info{
+    width: 6px;
+    height: 6px;
+    border-radius: 50px;
+    background-color: #E7E8EB;
+    margin-left: 8px;
+}
+.dialog-main2 {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 50%;
+}
+.dialog-div2 {
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    background-color: #fff;
+    justify-content: center;
+}
+.min-progress {
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+    width: 40px;
+    height: 40px;
+    color: #AFACAC;
+}
+.btn-go3 {
+    height: 1px;
+    background-color: #00000000;
+    width: 1px;
+}

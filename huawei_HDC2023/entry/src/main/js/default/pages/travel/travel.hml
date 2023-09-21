@@ -1,0 +1,174 @@
+<element name='tab' src='../common-tab/common-tab.hml'></element>
+
+<div class="container">
+   <div class="header">
+      <div class="header-back ">
+         <!--<image></image>-->
+      </div>
+      <text class="header-text">
+         码力互动
+      </text>
+      <div class="header-menu" @click="goCardSelect">
+         <image  src="/common/images/desktop.png"></image>
+         <text class="right-text">
+            添加至桌面
+         </text>
+      </div>
+   </div>
+<!--   <div class="fix-right">-->
+<!--      <image src="/common/images3/right-yellow.png"></image>-->
+<!--   </div>-->
+<!--   <div class="fix-left">-->
+<!--      <image src="/common/images3/left.png"></image>-->
+<!--   </div>-->
+   <swiper  on:touchstart="touchStartSwiper" on:touchend="touchEndSwiper" class="swiper" id="swiper"  index="{{swiperDataIndex}}"
+           autoplay="false" indicator="false" loop="true" digital="false" indicatormask="false" on:change="changeSwiper">
+      <div for="{{swiperList}}" >
+         <image src="{{$item.coverImageRealPath}}" class="swiper-img"></image>
+      </div>
+   </swiper>
+   <div class="common-dots">
+      <block for="{{ swiperList }}">
+         <image if="{{ $idx == swiperDataIndex }}" src="/common/images/fenge.png"></image>
+         <div else class="common-info"></div>
+      </block>
+   </div>
+   <div class="content-sy">
+      <div class="occupied" @click="goGuide">
+         <div class="fix-img">
+            <image src="/common/images3/fix-bg.png"></image>
+         </div>
+         <text class="occupied-title">三丫坡导览</text>
+         <div class="occupied-detail">
+            <text>查看详情</text>
+            <image src="/common/images3/white-right.png"></image>
+         </div>
+      </div>
+<!--      切换-->
+      <div class="flex align-center mx15">
+         <div onclick="choiceCard(1)" class="flex align-center  wp50 just-center {{cardStatus==1?'card1-bg':'card1-unbg'}}">
+            <text class="{{cardStatus==1?'card-bg-text':'card-unbg-text'}}">
+               码力互动
+            </text>
+         </div>
+         <div onclick="choiceCard(2)" class="flex align-center wp50 just-center {{cardStatus==2?'card2-bg':'card2-unbg'}}">
+            <text class="{{cardStatus==2?'card-bg-text1':'card-unbg-text1'}}">
+               精彩活动
+            </text>
+         </div>
+      </div>
+      <block  if="{{cardStatus == 1}}">
+         <div class="menu">
+            <div for="{{menuList}}" class="menu-block" >
+               <div class="menu-top" @click="goInte({{$item.type}})">
+                  <text class="menu-title">{{$item.title}} </text>
+                  <text class="menu-describe">{{$item.describe}} </text>
+               </div>
+
+               <div class="menu-select" style="background-color:{{$item.color}}" @click="goInte({{$item.type}})">
+                  <text>立即查看</text>
+                  <image src="/common/images/arrows.png"></image>
+               </div>
+               <div class="menu-img" @click="goInte({{$item.type}})">
+                  <image src="{{$item.img}}"></image>
+               </div>
+            </div>
+         </div>
+         <div class="tips" on:click="showInteractDialog">
+            <image src="/common/images/tips-jf.png"></image>
+            <text>互动背景</text>
+         </div>
+      </block>
+      <div class="hot" else>
+<!--         <div class="hot-head">-->
+<!--            <text class="hot-title">热门风景</text>-->
+<!--            <div class="more" @click="goMore">-->
+<!--               <text class="more-title">更多</text>-->
+<!--               <image src="/common/images3/more.png"></image>-->
+<!--            </div>-->
+<!--         </div>-->
+         <div class="list">
+            <div class="hot-block " for="{{hotList}}"  @click="goDetail({{ $item }})">
+               <div style="position: relative;">
+                  <image class="hot-block-img" src="{{$item.coverImageRealPath}}"></image>
+                  <image class="hot-block-bg" src="/common/images3/list-bg.png"></image>
+               </div>
+               <text class="hot-block-title">{{$item.title.split('|')[0]||''}}</text>
+               <div class="hot-address">
+                  <image src="/common/images3/address.png"></image>
+                  <text>{{$item.title.split('|')[1]||''}}</text>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <dialog id="loadingTravel" class="dialog-main2" oncancel="cancelDialogByLoadiong" style="top: 10%;">
+      <div class="dialog-div2">
+         <progress class="min-progress" type="circular"></progress>
+         <input type="text" class="btn-go3" value="">
+         </input>
+      </div>
+   </dialog>
+<!--底部TAB-->
+   <dialog id="hintDialog" style="margin-bottom: 50%;border-radius: 10px;">
+      <div class="dialog-div">
+         <div class="close" @click="closeDialog">
+            <image src="/common/images/close-jf.png"></image>
+         </div>
+         <div class="dialog-content">
+            <div style="display: flex;justify-content: center;">
+               <image src="/common/images/dialog-tip.png"></image>
+            </div>
+            <div style="display: flex;flex-direction: column;" if="{{isHW}}">
+               <div style="display: flex;justify-content: center;">
+                  <text class="dialog-tip">您未签到</text>
+               </div>
+               <div style="display: flex;justify-content: center;">
+                  <text class="dialog-con">签到后激活码力系统，参与互动</text>
+               </div>
+            </div>
+            <div style="display: flex;flex-direction: column;" else>
+               <div style="display: flex;justify-content: center;">
+
+               </div>
+               <div style="display: flex;justify-content: center;">
+                  <text class="dialog-con">该模块仅面向外部来宾开放，请选择其他功能体验</text>
+               </div>
+            </div>
+            <div style="display: flex;justify-content: center;">
+               <div class="ok" @click="closeDialog">
+                  <text>好的</text>
+               </div>
+            </div>
+         </div>
+      </div>
+   </dialog>
+   <div class="mask" show="{{showInteract}}" @click="closeInteractDialog"></div>
+<!--    <dialog id="interactDialog" style="margin-bottom: 50%;border-radius: 10px;">-->
+   <div class="dialog-interact" show="{{showInteract}}">
+      <div class="interact">
+         <image src="/common/images/interact.png"></image>
+      </div>
+      <div class="dialog-content">
+         <div class="two-content">
+            <div style="display: flex;justify-content: center;">
+               <text class="two-title">互动背景</text>
+            </div>
+            <list class="two-height" scrolleffect="no">
+               <list-item>
+                  <text class="two-introduce">{{introduce}}</text>
+               </list-item>
+            </list>
+
+         </div>
+         <div class="bottom-btn">
+            <div class="interact-ok" @click="closeInteractDialog">
+               <text>我已知悉</text>
+            </div>
+         </div>
+      </div>
+   </div>
+   <image src="/common/images3/bg.png" class="jf-bg"></image>
+   <tab type="2"></tab>
+
+</div>

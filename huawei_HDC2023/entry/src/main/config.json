@@ -1,0 +1,273 @@
+{
+  "app": {
+    "vendor": "huawei",
+    "bundleName": "com.smarket.hdc2023",
+    "version": {
+      "code": 130,
+      "name": "1.3.0"
+    }
+  },
+  "deviceConfig": {
+    "default": {
+      "allowComponentsProxy": true
+    }
+  },
+  "module": {
+    "mainAbility": "com.smarket.hdc2023.MainAbility",
+    "deviceType": [
+      "phone"
+    ],
+    "abilities": [
+      {
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "action.system.home",
+              "action.login"
+            ]
+          }
+        ],
+        "metaData": {
+          "customizeData": [
+            {
+              "name": "hwc-theme",
+              "value": "androidhwext:style/Theme.Emui.NoTitleBar"
+            }
+          ]
+        },
+        "visible": true,
+        "orientation": "portrait",
+        "name": "com.smarket.hdc2023.MainAbility",
+        "icon": "$media:icon",
+        "configChanges": [
+          "layout",
+          "colorMode",
+          "orientation"
+        ],
+        "description": "$string:card_description",
+        "formsEnabled": true,
+        "label": "$string:entry_MainAbility",
+        "type": "page",
+        "forms": [
+          {
+            "description": "大会议程卡片",
+            "name": "widget",
+            "jsComponentName": "card_2x2",
+            "isDefault": true,
+            "colorMode": "auto",
+            "type": "JS",
+            "supportDimensions": [
+              "2*2"
+            ],
+            "defaultDimension": "2*2",
+            "updateEnabled": true,
+            "scheduledUpdateTime": "14:30",
+            "updateDuration": 1
+          },
+          {
+            "description": "首页卡片",
+            "name": "card_1x2",
+            "jsComponentName": "card_1x2",
+            "isDefault": false,
+            "colorMode": "auto",
+            "type": "JS",
+            "defaultDimension": "1*2",
+            "supportDimensions": [
+              "1*2"
+            ],
+            "updateEnabled": false
+          },
+          {
+            "description": "大会议程卡片",
+            "name": "card_2x4",
+            "jsComponentName": "card_2x4",
+            "isDefault": false,
+            "colorMode": "auto",
+            "type": "JS",
+            "defaultDimension": "2*4",
+            "supportDimensions": [
+              "2*4"
+            ],
+            "updateEnabled": true,
+            "scheduledUpdateTime": "10:30",
+            "updateDuration": 1
+          },
+          {
+            "description": "2023HDC",
+            "name": "celia",
+            "jsComponentName": "celia",
+            "isDefault": false,
+            "colorMode": "auto",
+            "type": "JS",
+            "supportDimensions": [
+              "2*2"
+            ],
+            "defaultDimension": "2*2",
+            "updateEnabled": true,
+            "scheduledUpdateTime": "11:30"
+          }
+        ],
+        "launchType": "singleton"
+      },
+      {
+        "metaData": {
+          "customizeData": [
+            {
+              "name": "hwc-theme",
+              "value": "androidhwext:style/Theme.Emui.Translucent.NoTitleBar"
+            }
+          ]
+        },
+        "orientation": "portrait",
+        "visible": false,
+        "name": "com.smarket.hdc2023.widget.form.TransparentAbility",
+        "icon": "$media:icon",
+        "label": "$string:entry_MainAbility",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "metaData": {
+          "customizeData": [
+            {
+              "name": "hwc-theme",
+              "value": "androidhwext:style/Theme.Emui.NoTitleBar"
+            }
+          ]
+        },
+        "orientation": "portrait",
+        "visible": false,
+        "name": "com.smarket.hdc2023.widget.form.WebViewAbility",
+        "icon": "$media:icon",
+        "label": "$string:entry_MainAbility",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "name": "com.smarket.hdc2023.service.AudioServiceAbility",
+        "description": "$string:audioserviceability_description",
+        "type": "service",
+        "backgroundModes": [
+          "dataTransfer",
+          "audioPlayback"
+        ],
+        "icon": "$media:icon"
+      }
+    ],
+    "distro": {
+      "moduleType": "entry",
+      "installationFree": true,
+      "deliveryWithInstall": true,
+      "moduleName": "entry"
+    },
+    "package": "com.smarket.hdc2023",
+    "name": ".MyApplication",
+    "js": [
+      {
+        "pages": [
+          "pages/index/index",
+          "pages/agenda-detail/agenda-detail",
+          "pages/agenda/agenda",
+          "pages/help-about/help-about",
+          "pages/help-detail/help-detail",
+          "pages/help/help",
+          "pages/login/login",
+          "pages/loginAccredit/loginAccredit",
+          "pages/my-agenda/my-agenda",
+          "pages/my-ticket/my-ticket",
+          "pages/contact-us/contact-us",
+          "pages/my/my",
+          "pages/guest/guest-list",
+          "pages/guest/guest-detail",
+          "pages/partner/partner-list",
+          "pages/taskCenter/taskCenter",
+          "pages/travel/travel",
+          "pages/travel-detail/travel-detail"
+        ],
+        "name": "default",
+        "window": {
+          "designWidth": 720,
+          "autoDesignWidth": true
+        }
+      },
+      {
+        "pages": [
+          "pages/index/index"
+        ],
+        "name": "card_2x2",
+        "window": {
+          "designWidth": 720,
+          "autoDesignWidth": true
+        },
+        "type": "form"
+      },
+      {
+        "pages": [
+          "pages/index/index"
+        ],
+        "name": "card_1x2",
+        "window": {
+          "designWidth": 720,
+          "autoDesignWidth": true
+        },
+        "type": "form"
+      },
+      {
+        "pages": [
+          "pages/index/index"
+        ],
+        "name": "card_2x4",
+        "window": {
+          "designWidth": 720,
+          "autoDesignWidth": true
+        },
+        "type": "form"
+      },
+      {
+        "name": "celia",
+        "pages": [
+          "pages/index/index"
+        ],
+        "window": {
+          "designWidth": 720,
+          "autoDesignWidth": true
+        },
+        "type": "form"
+      }
+    ],
+    "metaData": {
+      "customizeData": [
+        {
+          "name": "com.huawei.hms.client.appid",
+          "value": "108531077"
+        }
+      ]
+    },
+    "reqPermissions": [
+
+      {
+        "reason": "议程添加到日历功能",
+        "name": "ohos.permission.READ_CALENDAR"
+      },
+      {
+        "reason": "议程添加到日历功能",
+        "name": "ohos.permission.WRITE_CALENDAR"
+      },
+      {
+        "reason": "获取音频数据",
+        "name": "ohos.permission.READ_USER_STORAGE"
+      },
+      {
+        "reason": "写入音频数据",
+        "name": "ohos.permission.WRITE_USER_STORAGE"
+      },
+      {
+        "reason": "后台长时播放音频",
+        "name": "ohos.permission.KEEP_BACKGROUND_RUNNING"
+      }
+    ]
+  }
+}

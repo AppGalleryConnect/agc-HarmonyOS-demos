@@ -1,0 +1,207 @@
+{
+  "string": [
+    {
+      "name": "SEMINAR_ID",
+      "value": "2307051644275796"
+    },
+    {
+      "name": "integraluri",
+      "value": "https://hwyhw-static.smarket.net.cn/cbg/interaction2023/#/"
+    },
+
+    {
+      "name": "entry_MainAbility",
+      "value": "华为开发者大会2023"
+    },
+    {
+      "name": "My_page",
+      "value": "我的门票"
+    },
+    {
+      "name": "entry_AgendaAbility",
+      "value": "议程详情"
+    },
+    {
+      "name": "entry_AgendaListAbility",
+      "value": "参会指南"
+    },
+    {
+      "name": "entry_MoreAbility",
+      "value": "议程列表"
+    },
+    {
+      "name": "entry_LoginAbility",
+      "value": "登录"
+    },
+    {
+      "name": "card_description",
+      "value": "华为开发者大会2023"
+    },
+    {
+      "name": "bundleName",
+      "value": "com.beyonds.wanda"
+    },
+    {
+      "name": "seminarGuestGetList",
+      "value": "seminar/guest/getList"
+    },
+    {
+      "name": "interactionTaskQuery",
+      "value": "interactionplus/api/task/query"
+    },
+    {
+      "name": "interactionTaskComplete",
+      "value": "interactionplus/api/task/complete"
+    },
+    {
+      "name": "memberSendVerificationCode",
+      "value": "api/cbg/SendCode"
+    },
+    {
+      "name": "memberGetToken",
+      "value": "member/GetToken"
+    },
+    {
+      "name": "memberLogin",
+      "value": "member/login"
+    },
+    {
+      "name": "apiSeminarContactsGet",
+      "value": "api/cbg/SeminarContacts"
+    },
+    {
+      "name": "apiSeminarSubseminarReserveGetidlist",
+      "value": "api/seminar/subseminar/reserve/getidlist"
+    },
+    {
+      "name": "apiSeminarSubseminarReservetechHourGetList",
+      "value": "api/cbg/techHourGetList"
+    },
+    {
+      "name": "dicParamsGetTree",
+      "value": "dic/params/getTree"
+    },
+    {
+      "name": "projectHwhdcGetSimpleList",
+      "value": "project/hwhdc/GetSimpleList"
+    },
+    {
+      "name": "apiSeminarSubseminarInformationQuery",
+      "value": "api/seminar/subseminar/information/query"
+    },
+    {
+      "name": "apiSeminarSubseminarGet",
+      "value": "api/seminar/subseminar/get"
+    },
+    {
+      "name": "anonymousGetId",
+      "value": "anonymous/getId"
+    },
+    {
+      "name": "seminarGet",
+      "value": "seminar/get"
+    },
+    {
+      "name": "apiSeminarSubseminarReserveCreate",
+      "value": "api/seminar/subseminar/reserve/create"
+    },
+    {
+      "name": "apiSeminarSubseminarReserveDelete",
+      "value": "api/seminar/subseminar/reserve/delete"
+    },
+    {
+      "name": "aruri",
+      "value": ""
+    },
+    {
+      "name": "openShow1",
+      "value": ""
+    },
+    {
+      "name": "openShow2",
+      "value": ""
+    },
+    {
+      "name": "audioserviceability_description",
+      "value": "音频播放服务"
+    },
+    {
+      "name": "apiCbgTechHourCreate",
+      "value": "api/cbg/techHourCreate"
+    },
+    {
+      "name": "apiCbgTechHourDelete",
+      "value": "api/cbg/techHourDelete"
+    },
+    {
+      "name": "apiHarmonyCardGetCardByPoid",
+      "value": "api/harmonyCard/getCardByPoid"
+    },
+    {
+      "name": "interactionApiUserScoreQuery",
+      "value": "interactionplus/api/user/score/query"
+    },
+    {
+      "name": "question",
+      "value": "https://developer.huawei.com/consumer/cn/service/josp/agc/cqp/#/replyQuestionnaire?preview=false&questionnaireId=1199859462924434305&fromOper=true&needLogin=0"
+    },
+    {
+      "name": "questionAfter",
+      "value": "https://agc-drcn.developer.huawei.com/agc/edge/cqs/questionnaire_service/v1/questionnaire/anonymous/feedback"
+    },
+    {
+      "name": "HOST_MORE_SERVICES",
+      "value": "https://hwyhw-static.smarket.net.cn/cbg/harmony-card/2023/"
+    },
+    {
+      "name": "POIID_CESHI",
+      "value": "https://hwproject-api.smarket.net.cn/api/harmonyCard/getPoiIdForXiaoYiTest"
+    },
+    {
+      "name": "HOST",
+      "value": "https://hw-hwyapi.smarket.net.cn/"
+    },{
+      "name": "HOST_PROJECT",
+      "value": "https://hwproject-api.smarket.net.cn/"
+    },{
+      "name": "HOST_STATIC",
+      "value": "https://hwyhw-static.smarket.net.cn/"
+    },
+    {
+      "name": "HOST_MATOMO",
+      "value": "https://s2-matomo.smarket.net.cn/"
+    },
+    {
+      "name": "HOST_IMG",
+      "value": "hwyhw-files.smarket.net.cn"
+    },
+    {
+      "name": "HOST_IMG_OLD",
+      "value": "hwyhw.smarket.net.cn"
+    },
+    {
+      "name": "TestPoiId",
+      "value": "https://znoss.znuotech.com/HDC2023/poiid.json"
+    },
+    {
+      "name": "apiLoginHW",
+      "value": "api/harmonyCard/login"
+    },
+    {
+      "name": "getAccessTokenUrl",
+      "value": "https://oauth-login.cloud.huawei.com/oauth2/v3/token"
+    },
+    {
+      "name": "getMobileNumberUrl",
+      "value": "https://account.cloud.huawei.com/rest.php?nsp_svc=GOpen.User.getInfo"
+    },
+    {
+      "name": "clientId",
+      "value": "108531077"
+    },
+    {
+      "name": "clientSecret",
+      "value": "1b98e4e7418ff1bf33f2d2a9001ed6d259f2cedb0650871647c743a0c40855a0"
+    }
+  ]
+}

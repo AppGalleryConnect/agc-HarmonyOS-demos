@@ -1,0 +1,80 @@
+<div class="container">
+   <div class="header">
+      <div class="header-back " @click="back">
+         <image></image>
+      </div>
+      <text class="header-text">
+         {{title}}
+      </text>
+      <div class="header-menu" @click="goCardSelect">
+         <image  src="/common/images/desktop.png"></image>
+         <text class="right-text">
+            添加至桌面
+         </text>
+      </div>
+   </div>
+   <swiper  on:touchstart="touchStartSwiper" on:touchend="touchEndSwiper" class="swiper" id="swiper"  index="{{swiperDataIndex}}"
+           autoplay="false" indicator="false" loop="true" digital="false" indicatormask="false" on:change="changeSwiper">
+      <div for="{{swiperList}}" >
+         <image src="{{$item}}" class="swiper-img"></image>
+      </div>
+   </swiper>
+   <div class="common-dots">
+      <block for="{{ swiperList }}">
+         <image if="{{ $idx == swiperDataIndex }}" src="/common/images/fenge.png"></image>
+         <div else class="common-info"></div>
+      </block>
+   </div>
+   <div class="content-sy">
+      <div class="content-detail">
+         <div class="head">
+            <text class="head-title">{{title}}</text>
+            <div class="head-address">
+               <image src="/common/images3/address.png"></image>
+               <text>{{address}}</text>
+            </div>
+         </div>
+         <div style="position: relative;">
+            <div class="detail-right">
+               <image src="/common/images3/detail-bg.png"></image>
+            </div>
+            <div class="introduce">
+               
+               <div class="introduce-head">
+                  <image src="/common/images3/line.png"></image>
+                  <text>活动简介</text>
+               </div>
+               <text class="introduce-content">{{introduce}} </text>
+
+               <div class="introduce-head" style="margin-top: 19px;" if="{{voiceList && voiceList.length}}">
+                  <image src="/common/images3/line.png"></image>
+                  <text>语音讲解</text>
+               </div>
+               <div class="voice" if="{{voiceList && voiceList.length}}">
+                  <div class="voice-list" for="{{voiceList}}">
+                     <div class="voice-left">
+                        <text class="voice-title">{{$item.title}}</text>
+                     </div>
+                     <image @click="playAudio({{$item}})" src="/common/images3/voice-icon{{$item.isNowPlaying}}.png"></image>
+                  </div>
+               </div>
+
+              <!-- <div class="introduce-head" style="margin-top: 19px;">
+                  <image src="/common/images3/line.png"></image>
+                  <text>视频讲解</text>
+               </div>
+               <div class="video" for="{{videoList}}">
+                  <video src="{{$item}}" autoplay="true" style="border-radius: 10px;"></video>
+               </div>-->
+            </div>
+         </div>
+      </div>
+   </div>
+   <dialog id="loading" class="dialog-main2" oncancel="cancelDialogByLoadiong" style="top: 10%;">
+      <div class="dialog-div2">
+         <progress class="min-progress" type="circular"></progress>
+         <input type="text" class="btn-go3" value="">
+         </input>
+      </div>
+   </dialog>
+</div>

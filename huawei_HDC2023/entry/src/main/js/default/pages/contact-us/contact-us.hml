@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="topImage"></div>
+    <div class="header">
+        <div class="header-back " @click="back">
+            <image>
+            </image>
+        </div>
+        <text class="header-text">
+            联系我们
+        </text>
+        <div class="right-menu">
+
+        </div>
+    </div>
+    <!-- 导航结束-->
+   <div class="list-top">
+       <div class="list ">
+           <image src="/common/images2/contact1.jpg" class="list-image"></image>
+           <div class="list-font">
+               <text class="font1">华为开发者联盟服务号</text>
+               <text class="font2">了解更多HDC信息，截图保存，打开微信识别二维码，关注服务号</text>
+           </div>
+       </div>
+      <!-- <div class="list">
+           <image src="/common/images2/contact2.png" class="list-image"></image>
+           <div class="list-font">
+               <text class="font1">华为开发者大会2023官网</text>
+               <text class="font2">打开微信扫一扫，关注华为开发者大会2023.</text>
+           </div>
+       </div>-->
+       <div class="list list-email">
+           <image src="/common/images2/email.png" class="email-image"></image>
+           <div class="list-font">
+               <text class="font1">邮箱：</text>
+               <text class="font2">hdctogether@huawei.com</text>
+           </div>
+       </div>
+   </div>
+</div>

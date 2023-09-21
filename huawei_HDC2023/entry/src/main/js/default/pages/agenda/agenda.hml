@@ -1,0 +1,395 @@
+<element name='tab' src='../common-tab/common-tab.hml'></element>
+
+<div class="container">
+    <image src="/common/images2/yicheng-bg1.png" class="yicheng_bg"></image>
+    <div class="header">
+        <div class="header-back" >
+                    <!--<image>
+                    </image>-->
+        </div>
+        <text class="header-text">
+            议程
+        </text>
+        <div class="header-menu"></div>
+    </div>
+
+<!--搜索-->
+    <div class="bg-1" id="tob-bar">
+        <div class="search-box">
+            <div class="search">
+                <div class="ipt-icon__search" onclick="filterData"></div>
+                <input type="text" class="ipt" placeholder="请输入您感兴趣的议程" on:change="searchChange"
+                       enterkeytype="search" on:enterkeyclick="filterData">
+                </input>
+            </div>
+            <image if="{{ selectTab.date != '08/04' }}" onclick="showPanel"
+                   style="width: 19px; height: 15px; margin-left: 12px;" src="/common/images2/agenda-filter.png">
+            </image>
+        </div>
+        <div class="tab-bar">
+            <div style="flex-shrink: 1">
+                <div class="tab-box" for="{{ data }}" @click="changeTab({{ $item }})">
+                    <div class="tab-text" @click="changeTab({{ $item }})">
+                        <text class="day {{ selectTab.date == $item.date ? 'text-active' : '' }}"  @click="changeTab({{ $item }})">{{ $item.date }}
+                        </text>
+                        <image if="{{ selectTab.date == $item.date }}" src="/common/images2/time_border_new.png"  @click="changeTab({{ $item }})">
+                        </image>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <block if="{{ selectTab.category && selectTab.category.length > 1 }}">
+            <div class="tab-content card-white">
+                <div for="(index, category) in selectTab.category" class="category-tab {{selectTab.category&&selectTab.category.length === 2 ? 'category-tab2':'category-tab'}}"
+                     @click="changeCategory({{ category }})">
+                    <div class="category-item {{ selectCategory.name === category.name ? 'category-item-active' : ''
+                            }}">
+                        <text>
+                            <span class="category-title {{
+                                    selectCategory.name === category.name ? 'category-title-active' : '' }}">{{
+                                category.name }}</span>
+                        </text>
+                        <image if="{{ selectCategory.name === category.name }}"
+                               src="/common/images2/yicheng_line.png">
+                        </image>
+                    </div>
+                </div>
+            </div>
+        </block>
+    </div>
+    <refresh refreshing="{{ fresh }}" onrefresh="refresh">
+
+        <list class="list" scrolleffect="no" id="list">
+            <list-item class="tab-content group-item group-item-end {{ $idx == 0 ? 'mt35' : 'mt24' }}"
+                       for="{{ group in selectCategory.group }}" clickeffect="false">
+                <div class="group-top">
+                    <div class="{{ (group.groupName == '开发者主题演讲'||group.groupName == 'HarmonyOS生态峰会'||group.groupName == '鸿蒙生态峰会') ? 'group-top-lefts' : group.groupName.indexOf('HarmonyOS')>-1 ?'group-top-left-mls' :'group-top-left' }}">
+                        <text if="{{ group.groupName }}">{{ group.groupName=="HarmonyOS生态峰会"?"鸿蒙生态峰会":group.groupName }}</text>
+                    </div>
+                    <image class="group-top-right" src="/common/images2/yicheng_right.png"></image>
+                </div>
+
+                <block if="{{ group.groupName == '主题演讲' || group.groupName == '开发者主题演讲' }}">
+                    <div>
+                        <text if="{{ group.groupTitle }}" class="group-title">
+                            <span>{{ group.groupTitle }}</span>
+                        </text>
+                        <div class="agenda-appointment-box" if="{{ group.canReserve }}">
+                            <image if="{{ group.reserve }}" onclick="showDialog({{ group }})"
+                                   src="/common/images2/agenda-appointment-success.png"></image>
+                            <image else onclick="showDialog({{ group }})"
+                                   src="/common/images2/agenda-appointment.png"></image>
+                        </div>
+                    </div>
+
+                    <div class="agenda-flex">
+
+                        <image if="{{ group.groupTime }}" class="th-icon" src="/common/images/time.png"> </image>
+                        <text if="{{ group.groupTime }}" class="time-text" >
+                            <span>{{ group.groupTime }}</span>
+                        </text>
+                        <image if="{{ group.groupAddress }}" class="th-icon ml5" src="/common/images/live.png"> </image>
+                        <text class="hotel-text" if="{{ group.groupAddress }}">
+                            <span>{{ group.groupAddress }}</span>
+                        </text>
+                    </div>
+                </block>
+                <div class="codebase-flex" if="{{ group.canReserve && group.groupName == 'Codelabs'}}">
+                    <div class="group-add-space"></div>
+                    <div class="agenda-appointment-box agenda-appointment-box-codelabs">
+                        <image if="{{ group.reserve }}" onclick="showDialog({{ group }})"
+                               src="/common/images2/agenda-appointment-success.png"></image>
+                        <image else onclick="showDialog({{ group }})"
+                               src="/common/images2/agenda-appointment.png"></image>
+                    </div>
+                </div>
+                <div if="{{ group.groupName == 'Codelabs' }}" style="margin-bottom: 4px;">
+                    <image if="{{ group.groupTime }}" class="th-icon-new" src="/common/images2/agenda-time.png"></image>
+                    <text if="{{ group.groupTime }}" class="time-text-new" style="margin-right: 7px">
+                        <span>{{ group.groupTime }}</span>
+                    </text>
+                    <image if="{{ group.groupAddress }}" class="th-icon-new" src="/common/images2/yicheng_live_new.png">
+                    </image>
+                    <text class="hotel-text-new" if="{{ group.groupAddress }}">
+                        <span>{{ group.groupAddress }}</span>
+                    </text>
+                </div>
+
+                <div if="{{ group.groupName == 'Codelabs'|| group.groupName == '主题演讲' || group.groupName == '开发者主题演讲' }}" @click="goAgendaDetail({{ group }},{{ group.id }})">
+                    <text class="group-desc" if="{{ group.groupDesc }}">
+                        <span>{{ group.groupDesc }}</span>
+                    </text>
+                </div>
+
+                <div class="group-desc-tips" if="{{ group.groupTips && group.groupName == 'Codelabs' }}">
+                    <text class="span1">*</text>
+                    <text class="span2">{{ group.groupTips }}</text>
+                </div>
+
+                <div>
+                    <text if="{{ group.groupName == '主题演讲' || group.groupName == '开发者主题演讲' }}"
+                          class="group-line flex-shrink"></text>
+                   <!-- <text if="{{ group.groupName == 'Codelabs' }}" class="group-lines flex-shrink"></text>-->
+                </div>
+
+                <block if="{{group.groupName != 'Codelabs'&&group.timeLine&&group.timeLine.length>0}}">
+
+                    <div class="timeline-item  {{ $idx == 0 ? '' : 'timelinePt20' }}" for="{{ group.timeLine }}" >
+                        <div class="time-box" if="{{ group.groupName == '主题演讲' || group.groupName == '开发者主题演讲' }}">
+                            <image if="{{ $idx == 0 }}" src="/common/images2/yicheng_time.png" class="yicheng_time"></image>
+                            <div class="time-block" else>
+                                <text></text>
+                            </div>
+                            <text class="start-time">
+                                <span>{{ $item.startTime }}</span>
+                            </text>
+                            <text class="time-line"> - </text>
+                            <text class="end-time">
+                                <span>{{ $item.endTime }}</span>
+                            </text>
+                        </div>
+                        <div class="time-box-y " else>
+                            <image if="{{ $idx == 0 }}" src="/common/images2/yicheng_time.png" class="yicheng_time ">
+                            </image>
+                            <div class="time-block" else>
+                                <text></text>
+                            </div>
+                            <div class="time-box--y">
+                                <text class="start-time">
+                                    <span>{{ $item.startTime }}</span>
+                                </text>
+                                <text class="end-time">
+                                    <span>{{ $item.endTime }}</span>
+                                </text>
+                            </div>
+                        </div>
+                        <div class="info-box">
+                            <div class="ib-content" @click="goAgendaDetail({{ group }},{{ $item.id }})">
+                                <text class="{{selectCategory.name == '论坛活动'?'ibc-title-lt':'ibc-title'}}" if="{{ $item.name }}">
+                                    <span>{{ $item.name.replace('|', '') }}</span>
+                                </text>
+                                <block if="{{$item.guest && $item.guest.length && (selectCategory.name == '主题演讲' || selectCategory.name == '开发者主题演讲')}}">
+                                    <div class="guest-duty-box" for="{{ guestItem in $item.guest }}">
+                                        <text class="ibc-guest" if="{{ guestItem.name }}">
+                                            {{ guestItem.name }}
+                                        </text>
+                                        <div class="guest-line" if="{{ guestItem.duty }}"></div>
+                                        <text class="ibc-duty ml10" if="{{ guestItem.duty }}">
+                                            {{ guestItem.duty }}
+                                        </text>
+                                    </div>
+                                </block>
+                                <block if="{{ $item.hotel && selectCategory.name == '论坛活动' }}">
+                                    <div class="guest-duty-box ">
+                                        <text class="ibc-duty" if="{{ $item.hotel }}">
+                                            {{ $item.hotel }}
+                                        </text>
+                                    </div>
+                                </block>
+                                <block if="{{ $item.remark && selectCategory.name == '开发者活动' && group.groupName == 'Tech. Hour'}}">
+                                    <div class="guest-duty-box">
+                                        <text class="ibc-duty-lines2 ibc-duty-mx2-tech" if="{{ $item.remark }}">
+                                            {{ $item.remark }}
+                                        </text>
+                                    </div>
+                                </block>
+                                <block if="{{ $item.hotel && selectCategory.name == '开发者活动' && group.groupName != 'Tech. Hour'}}">
+                                    <div class="guest-duty-box">
+                                        <text class="ibc-duty-lines2 ibc-duty-mx2" if="{{ $item.hotel }}">
+                                            {{ $item.hotel }}
+                                        </text>
+                                    </div>
+                                </block>
+                            </div>
+                            <div class="agenda-appointment-box" if="{{ $item.canReserve }}">
+                                <image if="{{ $item.reserve }}" onclick="showDialog({{ $item }})"
+                                       src="/common/images2/agenda-appointment-success.png"></image>
+                                <image else onclick="showDialog({{ $item }})"
+                                       src="/common/images2/agenda-appointment.png"></image>
+                            </div>
+                        </div>
+                    </div>
+
+                </block>
+
+
+            </list-item>
+        </list>
+        <div class="item-content" show="{{ isNullShow }}">
+
+        <!-- 暂无数据-->
+            <div class="no-data">
+                <image src="/common/images/no-agenda.png">
+
+                </image>
+                <text>
+                    <span>{{ isNullText }}</span>
+                </text>
+            </div>
+        </div>
+
+    </refresh>
+
+<!--筛选弹层 -->
+    <panel id="modal-shaixuan" class="bg-panel" type="foldable" mode="half" miniheight="500px"
+           halfheight="500px">
+        <div class="panel-div">
+            <div class="close" onclick="closePanel">
+                <image src="/common/images/icon-close.png"></image>
+            </div>
+            <div class="agent-title">
+                <div class="orange-line"></div>
+                <text class="agent-title-text">
+                    <span>我关注的话题</span>
+                </text>
+            </div>
+            <div class="option-box">
+                <div style="flex-wrap: wrap;">
+                    <div @click="setSelectR($item.name)"
+                         class="wp33 {{ $idx % 3 == 0 ? 'flex-start' : $idx % 3 == 1 ? 'flex-center' : 'flex-end' }}"
+                         for="{{ treeR }}">
+                        <div class="margin option-list {{ $item.isClick ? 'option-list-ative' : 'option-list-unative'
+                                }}">
+                            <text class="{{ $item.isClick ? 'option-list-ative-text' : 'option-list-unative-text'
+                                }}">{{ $item.name }}</text>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--<div class="agent-title mt29">
+                <div class="orange-line"></div>
+                <text>
+                    <span class="agent-title-text">我是</span>
+                </text>
+            </div>
+            <div class="option-box">
+                <div style="flex-wrap: wrap">
+                    <div class="wp33 {{ $idx % 3 == 0 ? 'flex-start' : $idx % 3 == 1 ? 'flex-center' : 'flex-end' }}"
+                         for="{{ treeP }}" @click="setSelectP($item.name)">
+                        <div class="margin option-list {{ $item.isClick ? 'option-list-ative' : 'option-list-unative'
+                                }}">
+                            <text class="{{ $item.isClick ? 'option-list-ative-text' : 'option-list-unative-text'
+                                    }}">{{ $item.name }}</text>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+            <div class="inner-btn">
+                <div class="btn-reset" onclick="closeReset">
+                    <text>
+                        <span>重置</span>
+                    </text>
+                </div>
+                <div class="btn-submit" onclick="filterData">
+                    <text>
+                        <span>确认</span>
+                    </text>
+                </div>
+            </div>
+        </div>
+    </panel>
+
+    <dialog id="setDialog" class="dialog-main" oncancel="cancelDialog" style="top: 10%;">
+        <div class="dialog-div dialog-login">
+            <div class="close" onclick="cancelDialog">
+                <image src="/common/images/icon-close.png"></image>
+            </div>
+            <div class="dialog-h1">
+                <div>
+                    <text class="dialog-info">
+                        <span>添加到日历需要日历权限</span>
+                    </text>
+                </div>
+            </div>
+            <input type="button" class="btn-go" value="去授权" @click="setPermission"></input>
+        </div>
+    </dialog>
+
+    <dialog id="orderDialog" class="dialog-main" oncancel="cancelDialogByOrder" style="top: 10%;">
+        <div class="dialog-div dialog-login">
+            <div class="close" onclick="cancelDialogByOrder">
+                <image src="/common/images/icon-close.png"></image>
+            </div>
+            <div class="success-pic">
+                <image src="/common/images/success.png"></image>
+            </div>
+            <div class="dialog-h1">
+                <div>
+                    <text class="dialog-info dialog-info-margin text-center">
+                        <span>预约成功，可点击“添加至日历”将议程信息添加至日历事件</span>
+                    </text>
+                </div>
+                <div>
+                    <text class="dialog-info text-info">
+                        <span>议程开始前30分钟将给您发送短信提醒</span>
+                    </text>
+                </div>
+
+            </div>
+            <div class="addBox">
+                <text @click="addCalendarBycode">添加至日历</text>
+                <text class="lines"></text>
+                <text @click="goCardSelect">添加至桌面</text>
+            </div>
+            <input type="button" class="btn-go confirm-button" value="确定" @click="cancelDialogByOrder"></input>
+        </div>
+    </dialog>
+
+<!--去登录弹窗-->
+    <dialog id="loginDialog" class="dialog-main" oncancel="cancelDialogByLogin" style="top: 10%;">
+        <div class="dialog-div dialog-login">
+            <div class="close" onclick="cancelDialogByLogin">
+                <image src="/common/images/icon-close.png"></image>
+            </div>
+            <div class="dialog-h1">
+                <div>
+                    <text class="dialog-info">
+                        <span>您未登录，</span>
+                    </text>
+                </div>
+                <div>
+                    <text class="dialog-info">
+                        <span>请先登录后再体验更多功能</span>
+                    </text>
+                </div>
+            </div>
+            <input type="button" class="btn-go " value="去登录" @click="go(0)">
+
+            </input>
+        </div>
+    </dialog>
+
+<!--消息提醒-->
+    <dialog id="infoDialog" class="dialog-main" oncancel="cancelDialogByLogin" style="top: 10%;">
+        <div class="dialog-div">
+            <div class="close" onclick="cancelDialogByLogin">
+                <image src="/common/images/icon-close.png"></image>
+            </div>
+            <div class="dialog-h1">
+                <div>
+                    <text class="dialog-info">
+                        <span>{{ info1 }}</span>
+                    </text>
+                </div>
+                <div if="{{ info2 }}">
+                    <text class="dialog-info">
+                        <span>{{ info2 }}</span>
+                    </text>
+                </div>
+            </div>
+            <input type="button" class="btn-go " value="确定" @click="cancelDialogByLogin"></input>
+        </div>
+    </dialog>
+
+    <dialog id="loading" class="dialog-main2" oncancel="cancelDialogByLoadiong" style="top: 10%;">
+        <div class="dialog-div2">
+            <progress class="min-progress" type="circular"></progress>
+            <input type="text" class="btn-go3" value="">
+            </input>
+        </div>
+    </dialog>
+
+<!--底部TAB-->
+    <tab type="3"></tab>
+</div>

@@ -1,0 +1,175 @@
+<div class="container">
+    <image src="/common/images2/yicheng-bg1.png" class="yicheng_bg"></image>
+    <div class="header">
+        <div class="header-back " @click="back">
+            <image>
+            </image>
+        </div>
+        <text class="header-text">
+            我的议程
+        </text>
+        <div class="right-menu" @click="goCardSelect">
+            <image class="desktop-image" src="/common/images/desktop.png"></image>
+            <text class="desktop-text">添加至桌面</text>
+        </div>
+    </div>
+
+    <div class="bg-1" id="tob-bar">
+        <div class="tab-bar">
+            <div style="flex-shrink:1">
+                <div class="tab-box" @click="changeTab(0)">
+                    <div class="tab-text"  @click="changeTab(0)">
+                        <text class="day {{ topBg == 'bg-1' ? 'text-active' : '' }}">08/04</text>
+                        <image src="/common/images2/time_border_new.png" show="{{ topBg == 'bg-1' }}"></image>
+                    </div>
+                </div>
+                <div class="tab-box" @click="changeTab(1)">
+                    <div  class="tab-text"  @click="changeTab(1)">
+                        <text class="day {{ topBg == 'bg-2' ? 'text-active' : '' }}">08/05</text>
+                        <image src="/common/images2/time_border_new.png" show="{{ topBg == 'bg-2' }}"></image>
+                    </div>
+                </div>
+                <div class="tab-box" @click="changeTab(2)">
+                    <div  class="tab-text"  @click="changeTab(2)">
+                        <text class="day {{ topBg == 'bg-3' ? 'text-active' : '' }}">08/06</text>
+                        <image src="/common/images2/time_border_new.png" show="{{ topBg == 'bg-3' }}"></image>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <refresh refreshing="{{ fresh }}" onrefresh="refresh">
+
+    <!--没数据-->
+        <div class="item-content" show="{{ isNullShow }}">
+
+        <!--                暂无数据-->
+            <div class="no-data">
+                <image src="/common/images/no-agenda.png">
+
+                </image>
+                <text>
+                    <span>暂无预约议程</span>
+                </text>
+            </div>
+
+        <!--               / 暂无数据-->
+        </div>
+
+
+        <list class="list" scrolleffect="no" show="{{ ! isNullShow }}" id="list">
+
+            <list-item class="tab-content group-item"  for="{{(index, group) in sub}}"   clickeffect="false">
+                <div class="group-top">
+                    <div class="{{ group.groupName == '开发者主题演讲' ? 'group-top-lefts' : group.groupName.indexOf('HarmonyOS')>-1 ?'group-top-left-mls' :'group-top-left' }}">
+                        <text>{{group.groupName}}</text>
+                    </div>
+                    <image class="group-top-right" src="/common/images2/yicheng_right.png"></image>
+<!--                    <image style="width: 10px;"  onclick="showDialog({{ group }})" src="/common/images2/agenda-appointment-success.png" if="{{group.groupName == '开发者主题演讲'}}"></image>-->
+                </div>
+                <div class="group-title"  if="{{ group.groupName == '主题演讲' || group.groupName == '开发者主题演讲'}}">
+                    <text>
+                        {{ group.name }}
+                    </text>
+                </div>
+                <div class="agenda-appointment-boxs" if="{{group.groupName == '开发者主题演讲'}}">
+                    <image onclick="showDialog({{ group }})"  src="/common/images2/agenda-appointment-success.png" ></image>
+                </div>
+            <!--                <div if="group.groupTime || group.groupAddress || group.groupDesc || group.groupTips" class="group-line"></div>-->
+                <div class="timeline-item {{i==0?'':'pt27'}}" for="(i, timeline) in group.timeLine" @click="goAgendaDetail({{group}},{{ timeline.id }})">
+<!--                    <div class="time-box">-->
+<!--                        <text class="start-time">-->
+<!--                            <span>{{timeline.startTime}}</span>-->
+<!--                        </text>-->
+<!--                        <text class="end-time">-->
+<!--                            <span>{{timeline.endTime}}</span>-->
+<!--                        </text>-->
+<!--                    </div>-->
+                    <div class="time-box-y">
+                        <image if="{{ i == 0 }}" src="/common/images2/yicheng_time.png" class="yicheng_time "></image>
+                        <div class="time-block" else>
+                            <text></text>
+                        </div>
+                        <div class="time-box--y">
+                            <text class="start-time">
+                                <span>{{timeline.startTime}}</span>
+                            </text>
+                            <text class="time-line"></text>
+                            <text class="end-time">
+                                <span>{{timeline.endTime}}</span>
+                            </text>
+                        </div>
+                    </div>
+                    <div class="info-box">
+                        <div class="ib-content">
+                            <text class="ibc-title">
+                                <span>{{timeline.name.replace('|', '')}}</span>
+                            </text>
+                            <div class="ibc-address" if="{{ timeline.hotel && group.groupName != '主题演讲' && group.groupName != '开发者主题演讲'}}" >
+                                <!--<block if="group.groupName != 'Tech Hour'" for="{{aItem in timeline.agendaVO}}">
+                                    <image class="th-icon" src="/common/images2/agenda-hotel.png"></image>
+                                    <text class="ibc-address-text">{{aItem.name}}</text>
+                                </block>-->
+                                <image class="th-icon" src="/common/images2/agenda-hotel.png"></image>
+                                <text class="ibc-address-text">{{timeline.hotel}}</text>
+                            </div>
+                            <block if="{{group.groupName == '主题演讲' || group.groupName == '开发者主题演讲'}}">
+                                <div class="guest-duty-box" for="{{guestItem in timeline.guest}}">
+                                    <text class="ibc-guest" if="{{guestItem.name}}">
+                                        {{guestItem.name}}
+                                    </text>
+                                    <div class="guest-line" if="{{guestItem.duty}}"></div>
+                                    <text class="ibc-duty" if="{{guestItem.duty}}">
+                                        {{guestItem.duty}}
+                                    </text>
+                                </div>
+                            </block>
+                        </div>
+
+                        <div class="agenda-appointment-box" if="{{!group.groupName.includes('主题演讲') && group.groupName != 'Tech. Hour'}}">
+                            <image  onclick="showDialog({{ timeline }})" src="/common/images2/agenda-appointment-success.png" ></image>
+                        </div>
+
+                    </div>
+                </div>
+            </list-item>
+
+
+        </list>
+
+
+    </refresh>
+
+    <dialog id="infoDialog" class="dialog-main" oncancel="cancelDialog" style="top : 10%;">
+        <div class="dialog-div">
+            <div class="close" onclick="cancelDialog">
+                <image src="/common/images/icon-close.png">
+
+                </image>
+            </div>
+            <div class="dialog-h1">
+                <div>
+                    <text class="dialog-info">
+                        <span>{{ info1 }}</span>
+                    </text>
+                </div>
+                <div>
+                    <text class="dialog-info">
+                        <span>{{ info2 }}</span>
+                    </text>
+                </div>
+            </div>
+            <input type="button" class="btn-go" value="确定" @click="cancelDialog"></input>
+        </div>
+    </dialog>
+    <dialog id="loading" class="dialog-main2" oncancel="cancelDialogByLoadiong" style="top : 10%;">
+        <div class="dialog-div2">
+            <progress class="min-progress" type="circular"></progress>
+            <input type="text" class="btn-go3" value="">
+            </input>
+        </div>
+
+    </dialog>
+</div>
