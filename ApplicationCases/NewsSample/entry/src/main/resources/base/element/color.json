@@ -1,0 +1,56 @@
+{
+  "color": [
+    {
+      "name": "start_window_background",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "white",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "color_index",
+      "value": "#1E67DC"
+    },
+    {
+      "name": "color_background",
+      "value": "#1846A4"
+    },
+    {
+      "name": "blueColor",
+      "value": "#007DFF"
+    },
+    {
+      "name": "fontColor_text",
+      "value": "#000000"
+    },
+    {
+      "name": "backgroundColor",
+      "value": "#FF515050"
+    },
+    {
+      "name": "fontColor_text1",
+      "value": "#8A8A8A"
+    },
+    {
+      "name": "fontColor_text2",
+      "value": "#FF989898"
+    },
+    {
+      "name": "fontColor_text3",
+      "value": "#182431"
+    },
+    {
+      "name": "listColor",
+      "value": "#F1F3F5"
+    },
+    {
+      "name": "dividerColor",
+      "value": "#E2E2E2"
+    },
+    {
+      "name": "mini_text_font_color",
+      "value": "#E6FFFFFF"
+    }
+  ]
+}

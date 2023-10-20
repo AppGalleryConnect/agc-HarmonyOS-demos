@@ -1,0 +1,48 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "description"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "newsData"
+    },
+    {
+      "name": "privacy_title",
+      "value": "User Privacy"
+    },
+    {
+      "name": "privacy_desc",
+      "value": "Privacy Desc"
+    },
+    {
+      "name": "sure",
+      "value": "sure"
+    },
+    {
+      "name": "cancel",
+      "value": "取消"
+    },
+    {
+      "name": "confirm",
+      "value": "确认"
+    },
+    {
+      "name": "HarmonyHeiTi",
+      "value": "HarmonyHeiTi"
+    },
+    {
+      "name": "EntryFormAbility_desc",
+      "value": "form_description"
+    },
+    {
+      "name": "EntryFormAbility_label",
+      "value": "form_label"
+    }
+  ]
+}

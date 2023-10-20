@@ -1,0 +1,48 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "description"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "每日新闻"
+    },
+    {
+      "name": "privacy_title",
+      "value": "用户隐私条款"
+    },
+    {
+      "name": "privacy_desc",
+      "value": "本政策仅适用于{公司名}的{产品名}产品或服务。 最近更新日期：{隐私政策更新时间}\n本政策将帮助您了解以下内容：\n一、我们如何收集和使用您的用户信息\n二、我们如何使用 Cookie 和同类技术\n三、我们如何共享、转让、公开披露您的用户信息\n四、我们如何保护您的用户信息\n五、您的权利\n六、我们如何处理儿童的个人信息\n七、您的用户信息如何储存及如何在全球范围转移\n八、本政策如何更新\n九、如何联系我们\n"
+    },
+    {
+      "name": "sure",
+      "value": "确定"
+    },
+    {
+      "name": "cancel",
+      "value": "取消"
+    },
+    {
+      "name": "confirm",
+      "value": "确认"
+    },
+    {
+      "name": "HarmonyHeiTi",
+      "value": "HarmonyHeiTi"
+    },
+    {
+      "name": "EntryFormAbility_desc",
+      "value": "form_description"
+    },
+    {
+      "name": "EntryFormAbility_label",
+      "value": "form_label"
+    }
+  ]
+}
