@@ -1,20 +1,6 @@
 {
   "app": {
-    "signingConfigs": [
-      {
-        "name": "default",
-        "type": "HarmonyOS",
-        "material": {
-          "certpath": "C:\\Users\\f30052967\\.ohos\\config\\auto_debug_NewsSample_com.example.newssample_16345598.cer",
-          "storePassword": "0000001B1F945FCEC18CF88DBD26668962B37BB2F7EEB7AABAF2C112819282D02921E66918B9F65594ACE4",
-          "keyAlias": "debugKey",
-          "keyPassword": "0000001B97E32EE81CFE1B5A1D107B173BB4C816F3DEB993690CCBC29EBA894AE760457B17758F3484D64D",
-          "profile": "C:\\Users\\f30052967\\.ohos\\config\\auto_debug_NewsSample_com.example.newssample_16345598.p7b",
-          "signAlg": "SHA256withECDSA",
-          "storeFile": "C:\\Users\\f30052967\\.ohos\\config\\auto_debug_NewsSample_com.example.newssample_16345598.p12"
-        }
-      }
-    ],
+    "signingConfigs": [],
     "compileSdkVersion": 9,
     "compatibleSdkVersion": 9,
     "products": [
