@@ -2,6 +2,8 @@ import hilog from '@ohos.hilog';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import Window from '@ohos.window';
 import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
+import { initialize } from '@hw-agconnect/hmcore';
+import buffer from '@ohos.buffer';
 
 export default class EntryAbility extends UIAbility {
   onCreate() {
@@ -18,10 +20,14 @@ export default class EntryAbility extends UIAbility {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
   }
 
-  onWindowStageCreate(windowStage: Window.WindowStage) {
+  async onWindowStageCreate(windowStage: Window.WindowStage) {
+    const context = this.context
+    const value = await context.resourceManager.getRawFileContent("agconnect-services.json");
+    let json: string = buffer.from(value).toString("utf8");
+    initialize(this.context, JSON.parse(json));
     // Main window is created, set main page for this ability
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
-    windowStage.loadContent('pages/AuthService', (err, data) => {
+    windowStage.loadContent('pages/Functions', (err, data) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;

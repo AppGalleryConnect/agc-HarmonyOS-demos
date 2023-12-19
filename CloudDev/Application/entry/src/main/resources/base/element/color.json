@@ -33,8 +33,20 @@
       "value": "#C2C2C2"
     },
     {
-      "name": "text_font_color",
-      "value": "#FFFFFF"
+      "name": "border_color",
+      "value": "#FF9B9B9B"
+    },
+    {
+      "name": "login_button",
+      "value": "#007DFF"
+    },
+    {
+      "name": "title_font",
+      "value": "#E5FFFFFF"
+    },
+    {
+      "name": "immersive_item_text",
+      "value": "#99FFFFFF"
     }
   ]
 }

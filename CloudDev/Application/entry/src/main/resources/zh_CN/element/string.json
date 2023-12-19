@@ -245,6 +245,10 @@
       "value": "登录失败"
     },
     {
+      "name": "common_check_size",
+      "value": "图片大小不能超过2MB"
+    },
+    {
       "name": "EntryFormAbility_desc",
       "value": "form_description"
     },

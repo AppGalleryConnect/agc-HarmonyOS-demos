@@ -18,23 +18,19 @@
     },
     {
       "name": "title_immersive_font_size",
-      "value": "19fp"
+      "value": "14fp"
     },
     {
       "name": "detail_immersive_font_size",
-      "value": "16fp"
-    },
-    {
-      "name": "detail_immersive_margin_top",
-      "value": "6vp"
-    },
-    {
-      "name": "detail_immersive_opacity",
-      "value": "0.66"
+      "value": "12fp"
     },
     {
       "name": "column_padding",
       "value": "12vp"
+    },
+    {
+      "name": "item_margin_top",
+      "value": "2vp"
     }
   ]
 }

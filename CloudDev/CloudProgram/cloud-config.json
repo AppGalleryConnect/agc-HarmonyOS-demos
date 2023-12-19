@@ -1,17 +1,17 @@
 {
   "appSelected": {
-    "appId": "1105746298570550016",
-    "appName": "CloudDevDemo",
+    "appId": "1167332865881418560",
+    "appName": "CloudDev Codelab",
     "deviceTypes": [
       {
         "deviceType": 4
       }
     ],
     "enableSites": "CN",
-    "installationFree": 0,
+    "installationFree": 1,
     "packageType": 7,
-    "projectId": "388421841221345234",
-    "projectName": "端云一体化DEMO",
+    "projectId": "388421841221498974",
+    "projectName": "端云一体化Codelab",
     "siteId": "CN"
   },
   "teamId": "70086000307977604"

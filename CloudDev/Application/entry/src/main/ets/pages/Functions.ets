@@ -1,7 +1,5 @@
-import agconnect from '@hw-agconnect/api-ohos';
-import "@hw-agconnect/function-ohos";
+import cloud from '@hw-agconnect/cloud';
 
-import { Log } from '../common/Log';
 @Entry
 @Component
 struct Functions {
@@ -33,15 +31,15 @@ struct Functions {
     .height('100%')
   }
 
-  callFunction() {
-    agconnect.instance().init(getContext(this));
-    let functionCallable = agconnect.function().wrap("animal-symbolic-$latest");
-    let params = {"year" : this.year};
-    functionCallable.call(params).then((ret: any) => {
-      this.functionResult = ret.getValue().result;
-      Log.info("Functions", "Cloud Function Called, Returned Value: " + JSON.stringify(ret.getValue()));
-    }).catch((error: any) => {
-      Log.error("Functions", "Error - could not obtain cloud function result. Error Detail: " + JSON.stringify(error));
-    });
+  async callFunction() {
+    let result  = await cloud.callFunction({
+      name: "animal-symbolic",
+      params: {
+        "year": this.year
+      }
+    })
+
+    this.functionResult = result.getValue().result
+    console.log("animal", this.functionResult)
   }
 }

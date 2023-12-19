@@ -1,0 +1,21 @@
+components:
+- name: animal-symbolic
+  properties:
+    handler: animalSymbolic.myHandler
+    memorySize: 500
+    runtime: nodejs14.x
+    codeUri: animal-symbolic.zip
+    env: null
+    timeout: 60
+    instanceConcurrency: 100
+    events:
+    - definitions: null
+      properties:
+        enableUrlDecode: true
+        authFlag: 'true'
+        authType: apigw-client
+        authAlgor: HDA-SYSTEM
+      type: no_path
+  type: Huawei::AGC::CloudFunctions
+name: CloudDevCodelabanimal-symbolic
+type: Application

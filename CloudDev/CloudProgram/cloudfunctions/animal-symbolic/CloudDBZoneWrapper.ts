@@ -4,8 +4,6 @@ import path from 'path'
 import {animal} from "./animal"
 
 let object = new animal();
-// 修改为需要操作的对象
-let objectName = object.getAnimal();
 
 let logger
 
@@ -18,7 +16,7 @@ class CloudDBZoneWrapper {
 
     let agcClient;
 
-    const credentialPath = "/resources/agc-apiclient-1165031605182418752-7239531817527681430.json";
+    const credentialPath = "/resources/agc-apiclient-1313739243687786368-7313826231207413268.json";
     try {
       agcClient = AGCClient.getInstance();
     } catch (error) {

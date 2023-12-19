@@ -1,6 +1,6 @@
 {
   "app": {
-    "bundleName": "com.huawei.clouddevdemo",
+    "bundleName": "com.huawei.clouddev.codelab",
     "bundleType": "atomicService",
     "vendor": "example",
     "versionCode": 1000000,

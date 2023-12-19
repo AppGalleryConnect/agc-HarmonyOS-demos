@@ -1,0 +1,11 @@
+{
+	"name":"id-generator",
+	"version":"1.0.0",
+	"description":"A simple example of a cloud function with an http trigger, returns a random UUID.",
+	"scripts":{
+	},
+	"author":"",
+	"license":"ISC",
+	"dependencies":{
+	}
+}

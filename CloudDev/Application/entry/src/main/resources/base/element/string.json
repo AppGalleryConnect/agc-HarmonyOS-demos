@@ -142,7 +142,7 @@
     },
     {
       "name": "cloud_function_description_main",
-      "value": "Easy to run code without managing servers"
+      "value": "Easy to run code without managing servers."
     },
     {
       "name": "cloud_function_description",
@@ -222,7 +222,7 @@
     },
     {
       "name": "cloud_storage_description_main",
-      "value": "Efficient cloud storage. High speed, low cost file upload and download services"
+      "value": "Efficient cloud storage. High speed, low cost file upload and download services."
     },
     {
       "name": "cloudStorage_progressLabel",
@@ -243,6 +243,10 @@
     {
       "name": "common_login_fail",
       "value": "Fail to login"
+    },
+    {
+      "name": "common_check_size",
+      "value": "The image size cannot exceed 2 MB."
     },
     {
       "name": "EntryFormAbility_desc",

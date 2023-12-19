@@ -1,0 +1,22 @@
+components:
+- name: id-generator
+  properties:
+    handler: IdGenerator.myHandler
+    memorySize: 500
+    runtime: nodejs14.x
+    codeUri: id-generator.zip
+    env: null
+    timeout: 60
+    instanceConcurrency: 100
+    events:
+    - definitions: null
+      properties:
+        mode: NO_PATH
+        enableUrlDecode: true
+        authFlag: 'true'
+        authType: apigw-client
+        authAlgor: HDA-SYSTEM
+      type: no_path
+  type: Huawei::AGC::CloudFunctions
+name: CloudDevCodelabid-generator
+type: Application
