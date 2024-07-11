@@ -4,7 +4,7 @@
 
 本示例展示了HarmonyOS应用/元服务使用预加载服务的方法。
 
-需要使用@hms.core.deviceCloudGateway.cloudFunction。
+需要使用@kit.CloudFundationKit。
 
 ## Sample工程使用说明
 
